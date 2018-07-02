@@ -18,7 +18,7 @@ abbrev: Multipart Content-Format for CoAP
 area: ART
 wg: CoRE
 kw: CoAP, Multipart Content-Format
-date: 2018-06-25
+date: 2018-07-02
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
@@ -152,6 +152,51 @@ case marked as "Pending" in {{fig-sequence}}, and carrying a single
 representation specified as the target content-format in the case in
 the middle of the figure.
 
+Implementation hints
+--------------------
+
+This section describes the serialization for readers that may be new
+to CBOR.  It does not contain any new information.
+
+An application/multipart-core representation carrying no
+representations is represented by an empty CBOR array, which is
+serialized as a single byte with the value 0x80.
+
+An application/multipart-core representation carrying a single
+representation is represented by a two-element CBOR array, which is
+serialized as 0x82 followed by the two elements.  The first element is
+an unsigned integer for the Content-Format value, which is represented as described in
+{{tbl-integer}}.  The second element is the object as a byte string,
+which is represented as a length as described in {{tbl-length}}
+followed by the bytes of the object.
+
+| Serialization  |      Value |
+| 0x00..0x17     |      0..23 |
+| 0x18 0xnn      |    24..255 |
+| 0x19 0xnn 0xnn | 256..66535 |
+{: #tbl-integer title="Serialization of content-format"}
+
+| Serialization  |     Length |
+| 0x40..0x57     |      0..23 |
+| 0x58 0xnn      |    24..255 |
+| 0x59 0xnn 0xnn | 256..66535 |
+| 0x5a 0xnn 0xnn 0xnn 0xnn | 66536..4294967295  |
+| 0x5b 0xnn .. 0xnn (8 bytes)  | 4294967296.. |
+{: #tbl-length title="Serialization of object length"}
+
+For example, a single text/plain object (content-format 0) of value
+"Hello World" (11 characters) would be serialized as
+
+> 0x82 0x00 0x4b H e l l o 0x20 w o r l d
+
+In effect, the serialization for a single object is done by prefixing
+the object with information about its content-format (here: 0x82 0x00)
+and its length (here: 0x4b).
+
+For more than one representation included in an
+application/multipart-core representation, the head of the CBOR array
+is adjusted (0x84 for two representations, 0x86 for three, ...) and
+the sequences of content-format and embedded representations follow.
 
 # IANA Considerations {#IANA}
 
