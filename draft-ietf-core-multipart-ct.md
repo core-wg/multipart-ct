@@ -46,6 +46,7 @@ author:
 normative:
   RFC7049: cbor
   RFC7252: coap
+  RFC7641: observe
 informative:
   I-D.ietf-ace-coap-est: est-coap
   I-D.ietf-cbor-cddl: cddl
@@ -119,9 +120,38 @@ be described by the CDDL {{-cddl}} specification in {{mct-cddl}}:
 
 ~~~CDDL
 multipart-core = [* multipart-part]
-multipart-part = (type: uint .size 2 / text, part: bytes / null)
+multipart-part = (type: uint .size 2, part: bytes / null)
 ~~~
 {:#mct-cddl title="CDDL for application/multipart-core"}
+
+# Usage Examples
+
+## Observing Resources
+
+When a client registers to observe a resource {{-observe}} for which no
+representation is available yet, the server may send one or more 2.05
+(Content) notifications before sending the first actual 2.05
+(Content) or 2.03 (Valid) notification.  The possible resulting
+sequence of notifications is shown in Figure 1.
+
+          __________       __________       __________
+         |          |     |          |     |          |
+    ---->|   2.05   |---->|  2.05 /  |---->|  4.xx /  |
+         | Pending  |     |   2.03   |     |   5.xx   |
+         |__________|     |__________|     |__________|
+            ^   \ \          ^    \           ^
+             \__/  \          \___/          /
+                    \_______________________/
+{: #fig-sequence title="Sequence of Notifications:"}
+
+The specification of the Observe option requires that all
+notifications carry the same Content-Format.  The
+application/multipart-core media type can be used to provide that
+Content-Format: e.g., carrying an empty list of representations in the
+case marked as "Pending" in {{fig-sequence}}, and carrying a single
+representation specified as the target content-format in the case in
+the middle of the figure.
+
 
 # IANA Considerations {#IANA}
 
