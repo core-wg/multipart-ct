@@ -18,7 +18,7 @@ abbrev: Multipart Content-Format for CoAP
 area: ART
 wg: CoRE
 kw: CoAP, Multipart Content-Format
-date: 2018-07-02
+date: 2018-08-07
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
@@ -271,8 +271,8 @@ Provisional registration? (standards tree only):
 
 IANA is requested to register the following Content-Format to the
 "CoAP Content-Formats" subregistry, within the "Constrained RESTful
-Environments (CoRE) Parameters" registry, from the IETF Review space
-(specifically, 256..999):
+Environments (CoRE) Parameters" registry, from the Expert Review space
+(0..255):
 
    | Media Type                 | Encoding | ID   | Reference |
    | application/multipart-core | ---      | TBD1 | RFCthis   |
