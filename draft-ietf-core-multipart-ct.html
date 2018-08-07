@@ -292,12 +292,12 @@ ul.toc li {
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.9.9 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.10.0 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Fossati, T., Hartke, K., and C. Bormann" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-core-multipart-ct-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2018-07-02" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-08-07" />
   <meta name="dct.abstract" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of several different media types into a single CoAP message-body with minimal framing overhead, each along with a CoAP Content-Format identifier." />
   <meta name="description" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of several different media types into a single CoAP message-body with minimal framing overhead, each along with a CoAP Content-Format identifier." />
 
@@ -321,7 +321,7 @@ ul.toc li {
 <td class="right">K. Hartke</td>
 </tr>
 <tr>
-<td class="left">Expires: January 3, 2019</td>
+<td class="left">Expires: February 8, 2019</td>
 <td class="right">Ericsson</td>
 </tr>
 <tr>
@@ -334,7 +334,7 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">July 02, 2018</td>
+<td class="right">August 07, 2018</td>
 </tr>
 
     	
@@ -350,7 +350,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on January 3, 2019.</p>
+<p>This Internet-Draft will expire on February 8, 2019.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2018 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -565,7 +565,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <h1 id="rfc.section.4.2">
 <a href="#rfc.section.4.2">4.2.</a> <a href="#registration-of-a-content-format-identifier-for-applicationmultipart-core" id="registration-of-a-content-format-identifier-for-applicationmultipart-core">Registration of a Content-Format identifier for application/multipart-core</a>
 </h1>
-<p id="rfc.section.4.2.p.1">IANA is requested to register the following Content-Format to the &#8220;CoAP Content-Formats&#8221; subregistry, within the &#8220;Constrained RESTful Environments (CoRE) Parameters&#8221; registry, from the IETF Review space (specifically, 256..999):</p>
+<p id="rfc.section.4.2.p.1">IANA is requested to register the following Content-Format to the &#8220;CoAP Content-Formats&#8221; subregistry, within the &#8220;Constrained RESTful Environments (CoRE) Parameters&#8221; registry, from the Expert Review space (0..255):</p>
 <table cellpadding="3" cellspacing="0" class="tt full center">
 <thead><tr>
 <th class="left">Media Type</th>
@@ -611,12 +611,12 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <tr>
 <td class="reference"><b id="I-D.ietf-ace-coap-est">[I-D.ietf-ace-coap-est]</b></td>
 <td class="top">
-<a>Stok, P.</a>, <a>Kampanakis, P.</a>, <a>Kumar, S.</a>, <a>Richardson, M.</a>, <a>Furuhed, M.</a> and <a>S. Raza</a>, "<a href="https://tools.ietf.org/html/draft-ietf-ace-coap-est-03">EST over secure CoAP (EST-coaps)</a>", Internet-Draft draft-ietf-ace-coap-est-03, June 2018.</td>
+<a>Stok, P.</a>, <a>Kampanakis, P.</a>, <a>Kumar, S.</a>, <a>Richardson, M.</a>, <a>Furuhed, M.</a> and <a>S. Raza</a>, "<a href="https://tools.ietf.org/html/draft-ietf-ace-coap-est-05">EST over secure CoAP (EST-coaps)</a>", Internet-Draft draft-ietf-ace-coap-est-05, July 2018.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-cbor-cddl">[I-D.ietf-cbor-cddl]</b></td>
 <td class="top">
-<a>Birkholz, H.</a>, <a>Vigano, C.</a> and <a>C. Bormann</a>, "<a href="https://tools.ietf.org/html/draft-ietf-cbor-cddl-02">Concise data definition language (CDDL): a notational convention to express CBOR data structures</a>", Internet-Draft draft-ietf-cbor-cddl-02, February 2018.</td>
+<a>Birkholz, H.</a>, <a>Vigano, C.</a> and <a>C. Bormann</a>, "<a href="https://tools.ietf.org/html/draft-ietf-cbor-cddl-03">Concise data definition language (CDDL): a notational convention to express CBOR data structures</a>", Internet-Draft draft-ietf-cbor-cddl-03, July 2018.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC6838">[RFC6838]</b></td>
