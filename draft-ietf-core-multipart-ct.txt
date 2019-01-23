@@ -210,7 +210,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
                       +----------------+------------+
                       | 0x00..0x17     | 0..23      |
                       | 0x18 0xnn      | 24..255    |
-                      | 0x19 0xnn 0xnn | 256..66535 |
+                      | 0x19 0xnn 0xnn | 256..65535 |
                       +----------------+------------+
 
                  Table 1: Serialization of content-format
@@ -231,8 +231,8 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
             +-----------------------------+-------------------+
             | 0x40..0x57                  | 0..23             |
             | 0x58 0xnn                   | 24..255           |
-            | 0x59 0xnn 0xnn              | 256..66535        |
-            | 0x5a 0xnn 0xnn 0xnn 0xnn    | 66536..4294967295 |
+            | 0x59 0xnn 0xnn              | 256..65535        |
+            | 0x5a 0xnn 0xnn 0xnn 0xnn    | 65536..4294967295 |
             | 0x5b 0xnn .. 0xnn (8 bytes) | 4294967296..      |
             +-----------------------------+-------------------+
 
@@ -362,16 +362,15 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 6.2.  Informative References
 
    [I-D.ietf-ace-coap-est]
-              Stok, P., Kampanakis, P., Kumar, S., Richardson, M.,
-              Furuhed, M., and S. Raza, "EST over secure CoAP (EST-
-              coaps)", draft-ietf-ace-coap-est-05 (work in progress),
-              July 2018.
+              Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
+              "EST over secure CoAP (EST-coaps)", draft-ietf-ace-coap-
+              est-07 (work in progress), January 2019.
 
    [I-D.ietf-cbor-cddl]
               Birkholz, H., Vigano, C., and C. Bormann, "Concise data
               definition language (CDDL): a notational convention to
-              express CBOR data structures", draft-ietf-cbor-cddl-03
-              (work in progress), July 2018.
+              express CBOR and JSON data structures", draft-ietf-cbor-
+              cddl-06 (work in progress), November 2018.
 
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
               Specifications and Registration Procedures", BCP 13,
@@ -385,6 +384,7 @@ Acknowledgements
    document is based on the requirements in [I-D.ietf-ace-coap-est],
    based on discussions with Michael Richardson, Panos Kampanis and
    Peter van der Stok.
+
 
 
 
