@@ -55,7 +55,7 @@ informative:
 
 This memo defines application/multipart-core, an
 application-independent media-type that can be used
-to combine representations of several different media types into a single
+to combine representations of zero or more different media types into a single
 CoAP message-body with minimal framing overhead, each along with a CoAP
 Content-Format identifier.
 
@@ -64,7 +64,7 @@ Content-Format identifier.
 # Introduction
 
 This memo defines application/multipart-core, an application-independent
-media-type that can be used to combine representations of several different media types
+media-type that can be used to combine representations of zero or more different media types
 into a single CoAP {{-coap}} message-body with minimal framing
 overhead, each along with a CoAP Content-Format identifier.
 
