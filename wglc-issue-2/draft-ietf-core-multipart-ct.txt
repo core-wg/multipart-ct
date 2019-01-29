@@ -283,8 +283,8 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
    Applications that use this media type:  Applications that need to
-      combine representations of potentially several media types into
-      one, e.g., EST-CoAP [I-D.ietf-ace-coap-est]
+      combine representations of different media types into one, e.g.,
+      EST-CoAP [I-D.ietf-ace-coap-est]
 
    Fragment identifier considerations:  N/A
 
