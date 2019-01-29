@@ -404,7 +404,7 @@ ul.toc li {
 <a href="#rfc.section.2">2.</a> <a href="#multipart-content-format-encoding" id="multipart-content-format-encoding">Multipart Content-Format Encoding</a>
 </h1>
 <p id="rfc.section.2.p.1">A representation of media-type application/multipart-core contains a collection of zero or more representations, each along with their respective content format.</p>
-<p id="rfc.section.2.p.2">The collection is encoded as a CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.  (Future extensions might want to include additional alternative ways of specifying the media type of a representation in such a position.)</p>
+<p id="rfc.section.2.p.2">The collection is encoded as a CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.</p>
 <p id="rfc.section.2.p.3">For example, a collection containing two representations, one with content format ID 42 and one with content format ID 0, looks like this in CBOR diagnostic notation:</p>
 <p></p>
 
@@ -599,11 +599,6 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <td class="top">
 <a>Shelby, Z.</a>, <a>Hartke, K.</a> and <a>C. Bormann</a>, "<a href="https://tools.ietf.org/html/rfc7252">The Constrained Application Protocol (CoAP)</a>", RFC 7252, DOI 10.17487/RFC7252, June 2014.</td>
 </tr>
-<tr>
-<td class="reference"><b id="RFC7641">[RFC7641]</b></td>
-<td class="top">
-<a>Hartke, K.</a>, "<a href="https://tools.ietf.org/html/rfc7641">Observing Resources in the Constrained Application Protocol (CoAP)</a>", RFC 7641, DOI 10.17487/RFC7641, September 2015.</td>
-</tr>
 </tbody></table>
 <h1 id="rfc.references.2">
 <a href="#rfc.references.2">7.2.</a> Informative References</h1>
@@ -622,6 +617,11 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <td class="reference"><b id="RFC6838">[RFC6838]</b></td>
 <td class="top">
 <a>Freed, N.</a>, <a>Klensin, J.</a> and <a>T. Hansen</a>, "<a href="https://tools.ietf.org/html/rfc6838">Media Type Specifications and Registration Procedures</a>", BCP 13, RFC 6838, DOI 10.17487/RFC6838, January 2013.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC7641">[RFC7641]</b></td>
+<td class="top">
+<a>Hartke, K.</a>, "<a href="https://tools.ietf.org/html/rfc7641">Observing Resources in the Constrained Application Protocol (CoAP)</a>", RFC 7641, DOI 10.17487/RFC7641, September 2015.</td>
 </tr>
 </tbody></table>
 <h1 id="rfc.acknowledgements"><a href="#rfc.acknowledgements">Acknowledgements</a></h1>
