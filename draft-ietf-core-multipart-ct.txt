@@ -68,15 +68,15 @@ Table of Contents
    2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
    3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   3
      3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   3
-     3.2.  Implementation hints  . . . . . . . . . . . . . . . . . .   4
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
-     4.1.  Registration of media type application/multipart-core . .   5
-     4.2.  Registration of a Content-Format identifier for
+   4.  Implementation hints  . . . . . . . . . . . . . . . . . . . .   4
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
+     5.1.  Registration of media type application/multipart-core . .   5
+     5.2.  Registration of a Content-Format identifier for
            application/multipart-core  . . . . . . . . . . . . . . .   6
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
-   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-     6.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
-     6.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
@@ -188,7 +188,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    "Pending" in Figure 2, and carrying a single representation specified
    as the target content-format in the case in the middle of the figure.
 
-3.2.  Implementation hints
+4.  Implementation hints
 
    This section describes the serialization for readers that may be new
    to CBOR.  It does not contain any new information.
@@ -252,9 +252,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    (0x84 for two representations, 0x86 for three, ...) and the sequences
    of content-format and embedded representations follow.
 
-4.  IANA Considerations
+5.  IANA Considerations
 
-4.1.  Registration of media type application/multipart-core
+5.1.  Registration of media type application/multipart-core
 
    IANA is requested to register the following media type [RFC6838]:
 
@@ -311,7 +311,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
    Provisional registration? (standards tree only):  no
 
-4.2.  Registration of a Content-Format identifier for application/
+5.2.  Registration of a Content-Format identifier for application/
       multipart-core
 
    IANA is requested to register the following Content-Format to the
@@ -325,7 +325,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
        | application/multipart-core | --       | TBD1 | RFCthis   |
        +----------------------------+----------+------+-----------+
 
-5.  Security Considerations
+6.  Security Considerations
 
    The security considerations of [RFC7049] apply.  In particular,
    resource exhaustion attacks may employ large values for the byte
@@ -341,9 +341,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    string size fields, or deeply nested structures of recursively
    embedded application/multipart-core representations.
 
-6.  References
+7.  References
 
-6.1.  Normative References
+7.1.  Normative References
 
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
@@ -359,7 +359,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
               DOI 10.17487/RFC7641, September 2015,
               <https://www.rfc-editor.org/info/rfc7641>.
 
-6.2.  Informative References
+7.2.  Informative References
 
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
