@@ -106,8 +106,6 @@ a representation, or the value `null` if an optional part is indicated
 as not given.
 The first, third, fifth, etc. element is an unsigned integer
 specifying the content format ID of the representation following it.
-(Future extensions might want to include additional alternative ways of
-specifying the media type of a representation in such a position.)
 
 For example, a collection containing two representations, one with
 content format ID 42 and one with content format ID 0, looks like this
