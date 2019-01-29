@@ -229,8 +229,8 @@ Published specification:
 : RFCthis
 
 Applications that use this media type:
-: Applications that need to combine representations of potentially
-  several media types into one, e.g., EST-CoAP {{-est-coap}}
+: Applications that need to combine representations of different
+  media types into one, e.g., EST-CoAP {{-est-coap}}
 
 Fragment identifier considerations:
 : N/A
