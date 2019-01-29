@@ -46,8 +46,8 @@ author:
 normative:
   RFC7049: cbor
   RFC7252: coap
-  RFC7641: observe
 informative:
+  RFC7641: observe
   I-D.ietf-ace-coap-est: est-coap
   I-D.ietf-cbor-cddl: cddl
 
