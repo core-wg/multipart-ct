@@ -1,6 +1,60 @@
 [
 
   {
+    "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/19",
+    "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
+    "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/19/labels{/name}",
+    "comments_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/19/comments",
+    "events_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/19/events",
+    "html_url": "https://github.com/core-wg/multipart-ct/pull/19",
+    "id": 404845355,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjQ4OTM1NTQz",
+    "number": 19,
+    "title": "do not mention / suggest specific codepoint ranges",
+    "user": {
+      "login": "thomas-fossati",
+      "id": 9195842,
+      "node_id": "MDQ6VXNlcjkxOTU4NDI=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9195842?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomas-fossati",
+      "html_url": "https://github.com/thomas-fossati",
+      "followers_url": "https://api.github.com/users/thomas-fossati/followers",
+      "following_url": "https://api.github.com/users/thomas-fossati/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomas-fossati/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomas-fossati/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomas-fossati/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomas-fossati/orgs",
+      "repos_url": "https://api.github.com/users/thomas-fossati/repos",
+      "events_url": "https://api.github.com/users/thomas-fossati/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomas-fossati/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2019-01-30T16:10:57Z",
+    "updated_at": "2019-01-30T16:10:58Z",
+    "closed_at": null,
+    "author_association": "CONTRIBUTOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/19",
+      "html_url": "https://github.com/core-wg/multipart-ct/pull/19",
+      "diff_url": "https://github.com/core-wg/multipart-ct/pull/19.diff",
+      "patch_url": "https://github.com/core-wg/multipart-ct/pull/19.patch"
+    },
+    "body": "fixes #5"
+  },
+  {
     "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/18",
     "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
     "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/18/labels{/name}",
@@ -34,7 +88,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -43,9 +97,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-29T12:17:05Z",
-    "updated_at": "2019-01-29T12:17:05Z",
-    "closed_at": null,
-    "author_association": "FIRST_TIME_CONTRIBUTOR",
+    "updated_at": "2019-01-29T15:07:16Z",
+    "closed_at": "2019-01-29T15:07:08Z",
+    "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/18",
       "html_url": "https://github.com/core-wg/multipart-ct/pull/18",
@@ -88,7 +142,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -97,9 +151,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T21:01:30Z",
-    "updated_at": "2019-01-28T21:01:31Z",
-    "closed_at": null,
-    "author_association": "FIRST_TIME_CONTRIBUTOR",
+    "updated_at": "2019-01-29T15:08:19Z",
+    "closed_at": "2019-01-29T15:08:15Z",
+    "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/17",
       "html_url": "https://github.com/core-wg/multipart-ct/pull/17",
@@ -153,7 +207,7 @@
     "created_at": "2019-01-28T20:59:36Z",
     "updated_at": "2019-01-28T20:59:36Z",
     "closed_at": null,
-    "author_association": "FIRST_TIME_CONTRIBUTOR",
+    "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/16",
       "html_url": "https://github.com/core-wg/multipart-ct/pull/16",
@@ -203,11 +257,11 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2019-01-28T20:46:07Z",
-    "updated_at": "2019-01-28T20:46:08Z",
+    "updated_at": "2019-01-29T15:25:20Z",
     "closed_at": null,
-    "author_association": "FIRST_TIME_CONTRIBUTOR",
+    "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/15",
       "html_url": "https://github.com/core-wg/multipart-ct/pull/15",
@@ -257,11 +311,11 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 2,
     "created_at": "2019-01-28T20:43:24Z",
-    "updated_at": "2019-01-28T20:43:24Z",
+    "updated_at": "2019-01-29T15:30:58Z",
     "closed_at": null,
-    "author_association": "FIRST_TIME_CONTRIBUTOR",
+    "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/14",
       "html_url": "https://github.com/core-wg/multipart-ct/pull/14",
@@ -304,7 +358,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -313,9 +367,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T20:32:41Z",
-    "updated_at": "2019-01-28T20:32:41Z",
-    "closed_at": null,
-    "author_association": "FIRST_TIME_CONTRIBUTOR",
+    "updated_at": "2019-01-29T15:32:25Z",
+    "closed_at": "2019-01-29T15:08:49Z",
+    "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/13",
       "html_url": "https://github.com/core-wg/multipart-ct/pull/13",
@@ -358,7 +412,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -367,9 +421,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:28:14Z",
-    "updated_at": "2019-01-28T17:28:14Z",
-    "closed_at": null,
-    "author_association": "NONE",
+    "updated_at": "2019-01-29T15:08:49Z",
+    "closed_at": "2019-01-29T15:08:49Z",
+    "author_association": "CONTRIBUTOR",
     "body": "RFC7641 should be an informative reference as Observe seems to be referenced\r\nonly in the usage examples section."
   },
   {
@@ -417,7 +471,7 @@
     "created_at": "2019-01-28T17:27:44Z",
     "updated_at": "2019-01-28T17:27:44Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "Carsten adds:\r\n> Should we also copy the text: “(At\r\n>     publication of this document, there is no fragment identification\r\n>     syntax defined for “application/cbor”.)\"\r\n> ?"
   },
   {
@@ -463,9 +517,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:27:23Z",
-    "updated_at": "2019-01-28T17:27:23Z",
+    "updated_at": "2019-01-30T16:01:32Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "Include one more byte for the CBOR array."
   },
   {
@@ -502,7 +556,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -511,9 +565,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:27:02Z",
-    "updated_at": "2019-01-28T17:27:02Z",
-    "closed_at": null,
-    "author_association": "NONE",
+    "updated_at": "2019-01-29T15:07:08Z",
+    "closed_at": "2019-01-29T15:07:08Z",
+    "author_association": "CONTRIBUTOR",
     "body": "This doesn't seem like a usage example.  Promote it to a top-level section."
   },
   {
@@ -548,7 +602,14 @@
       "site_admin": false
     },
     "labels": [
-
+      {
+        "id": 977391894,
+        "node_id": "MDU6TGFiZWw5NzczOTE4OTQ=",
+        "url": "https://api.github.com/repos/core-wg/multipart-ct/labels/question",
+        "name": "question",
+        "color": "d876e3",
+        "default": true
+      }
     ],
     "state": "open",
     "locked": false,
@@ -557,11 +618,11 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2019-01-28T17:26:42Z",
-    "updated_at": "2019-01-28T17:26:42Z",
+    "updated_at": "2019-01-30T15:58:45Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> I see that draft-ietf-core-coap-pubsub-05 is still proposing a\r\n> new response code (2.07) for this scenario. Will -pubsub switch to\r\n> -multipart-ct as described in this section? If not, better remove the\r\n> example."
   },
   {
@@ -598,7 +659,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -607,9 +668,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:25:44Z",
-    "updated_at": "2019-01-28T17:25:44Z",
-    "closed_at": null,
-    "author_association": "NONE",
+    "updated_at": "2019-01-29T15:08:15Z",
+    "closed_at": "2019-01-29T15:08:15Z",
+    "author_association": "CONTRIBUTOR",
     "body": "```\r\n(Future extensions might want to include additional alternative\r\nways of specifying the media type of a representation in such a\r\nposition.)\r\n```\r\nThere is little a reader of the document could actually do with this\r\ninformation."
   },
   {
@@ -644,7 +705,14 @@
       "site_admin": false
     },
     "labels": [
-
+      {
+        "id": 977391887,
+        "node_id": "MDU6TGFiZWw5NzczOTE4ODc=",
+        "url": "https://api.github.com/repos/core-wg/multipart-ct/labels/help%20wanted",
+        "name": "help wanted",
+        "color": "008672",
+        "default": true
+      }
     ],
     "state": "open",
     "locked": false,
@@ -655,9 +723,9 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:25:13Z",
-    "updated_at": "2019-01-28T17:25:13Z",
+    "updated_at": "2019-01-30T16:04:12Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> There should be a sub-section or paragraph specifying what a\r\n> recipient of a application/multipart-core representation should do if\r\n> it encounters something that doesn't match the grammar. Does the whole\r\n> array become unusable when there is an unexpected element, or can a\r\n> recipient use the array up to the unexpected element? Should a\r\n> recipient try to do error recovery and skip to the next element? This\r\n> has impact on how the format can be evolved in the future.\r\n\r\nCarsten seems to prefer failing hard and early (draft-iab-protocol-maintenance).\r\n\r\nThomas loves simplicity and +1 Carsten's proposal."
   },
   {
@@ -701,12 +769,12 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2019-01-28T17:24:51Z",
-    "updated_at": "2019-01-28T17:24:51Z",
+    "updated_at": "2019-01-30T16:00:03Z",
     "closed_at": null,
-    "author_association": "NONE",
-    "body": "```\r\n[...] typically one in the range 10000-64999\" -- Better not to state the\r\nrange explicitly as that locks the Content-Formats registry into\r\nproviding this range for this purpose forever.\r\n```\r\nWe should explicitly say \"First Come First Served\" instead of 10000-64999"
+    "author_association": "CONTRIBUTOR",
+    "body": "```\r\n[...] typically one in the range 10000-64999\r\n```\r\n\r\nKlaus\r\n> Better not to state the range explicitly as that locks the Content-Formats registry into providing this range for this purpose forever.\r\n\r\nCarsten\r\n> Should we say \"First Come First Served\" instead of 10000-64999?"
   },
   {
     "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/4",
@@ -753,7 +821,7 @@
     "created_at": "2019-01-28T17:24:14Z",
     "updated_at": "2019-01-28T17:24:14Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] Applications using the application/multipart-core Content-Format\r\ndefine the internal structure of the application/multipart-core\r\nrepresentation.\r\n```\r\nWe should add something like: \" within the syntactical boundaries defined by\r\nthe CDDL in Figure 1.\""
   },
   {
@@ -801,7 +869,7 @@
     "created_at": "2019-01-28T17:23:54Z",
     "updated_at": "2019-01-28T17:23:54Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] into a single CoAP message-body with minimal framing overhead,\r\neach along with a CoAP Content-Format identifier.\r\n```\r\n-> s/message-body/request or response body/"
   },
   {
@@ -849,7 +917,7 @@
     "created_at": "2019-01-28T17:23:26Z",
     "updated_at": "2019-01-28T17:23:26Z",
     "closed_at": null,
-    "author_association": "NONE",
+    "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] that can be used to combine representations of several different\r\nmedia types\r\n```\r\nIt should not preclude 0, 1 or 2, therefore: s/several/zero or more/"
   },
   {
