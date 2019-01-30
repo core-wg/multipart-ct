@@ -82,8 +82,7 @@ present by substituting a null value for the representation of the part.
 
 Optionally, an application might use the general format defined here,
 but also register a new media type and an associated Content-Format
-identifier --- typically one in the range 10000-64999 --- instead of
-using application/multipart-core.
+identifier instead of using application/multipart-core.
 
 
 <!--  Leave out until needed:
