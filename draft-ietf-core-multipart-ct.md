@@ -22,8 +22,8 @@ date: 2018-08-07
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
-  org: Nokia
-  email: thomas.fossati@nokia.com
+  org: ARM
+  email: thomas.fossati@arm.com
 -
   name: Klaus Hartke
   org: Ericsson
