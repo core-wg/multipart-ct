@@ -34,7 +34,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -43,8 +43,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-30T16:10:57Z",
-    "updated_at": "2019-01-30T16:10:58Z",
-    "closed_at": null,
+    "updated_at": "2019-01-30T16:24:54Z",
+    "closed_at": "2019-01-30T16:24:54Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/19",
@@ -620,7 +620,7 @@
     "milestone": null,
     "comments": 1,
     "created_at": "2019-01-28T17:26:42Z",
-    "updated_at": "2019-01-30T15:58:45Z",
+    "updated_at": "2019-01-30T17:20:24Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> I see that draft-ietf-core-coap-pubsub-05 is still proposing a\r\n> new response code (2.07) for this scenario. Will -pubsub switch to\r\n> -multipart-ct as described in this section? If not, better remove the\r\n> example."
@@ -762,7 +762,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -771,8 +771,8 @@
     "milestone": null,
     "comments": 1,
     "created_at": "2019-01-28T17:24:51Z",
-    "updated_at": "2019-01-30T16:00:03Z",
-    "closed_at": null,
+    "updated_at": "2019-01-30T16:24:54Z",
+    "closed_at": "2019-01-30T16:24:54Z",
     "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] typically one in the range 10000-64999\r\n```\r\n\r\nKlaus\r\n> Better not to state the range explicitly as that locks the Content-Formats registry into providing this range for this purpose forever.\r\n\r\nCarsten\r\n> Should we say \"First Come First Served\" instead of 10000-64999?"
   },
