@@ -3,7 +3,7 @@
 
 
 CoRE                                                          T. Fossati
-Internet-Draft                                                     Nokia
+Internet-Draft                                                       ARM
 Intended status: Standards Track                               K. Hartke
 Expires: February 8, 2019                                       Ericsson
                                                               C. Bormann
@@ -343,7 +343,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
               "EST over secure CoAP (EST-coaps)", draft-ietf-ace-coap-
-              est-07 (work in progress), January 2019.
+              est-08 (work in progress), February 2019.
 
    [I-D.ietf-cbor-cddl]
               Birkholz, H., Vigano, C., and C. Bormann, "Concise data
@@ -372,9 +372,9 @@ Acknowledgements
 Authors' Addresses
 
    Thomas Fossati
-   Nokia
+   ARM
 
-   Email: thomas.fossati@nokia.com
+   Email: thomas.fossati@arm.com
 
 
    Klaus Hartke
