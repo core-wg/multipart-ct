@@ -298,8 +298,8 @@ ul.toc li {
   <meta name="dct.creator" content="Fossati, T., Hartke, K., and C. Bormann" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-core-multipart-ct-latest" />
   <meta name="dct.issued" scheme="ISO8601" content="2018-08-07" />
-  <meta name="dct.abstract" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of several different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier." />
-  <meta name="description" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of several different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier." />
+  <meta name="dct.abstract" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier." />
+  <meta name="description" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier." />
 
 </head>
 
@@ -345,7 +345,7 @@ ul.toc li {
   <span class="filename">draft-ietf-core-multipart-ct-latest</span></p>
   
   <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
-<p>This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of several different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier.</p>
+<p>This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier.</p>
 <h1 id="rfc.status"><a href="#rfc.status">Status of This Memo</a></h1>
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
@@ -395,7 +395,7 @@ ul.toc li {
   <h1 id="rfc.section.1">
 <a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a>
 </h1>
-<p id="rfc.section.1.p.1">This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of several different media types into a single message, such as a CoAP <a href="#RFC7252" class="xref">[RFC7252]</a> request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier.</p>
+<p id="rfc.section.1.p.1">This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP <a href="#RFC7252" class="xref">[RFC7252]</a> request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier.</p>
 <p id="rfc.section.1.p.2">This simple and efficient binary framing mechanism can be employed to create application specific request and response bodies which build on multiple already existing media types.</p>
 <p id="rfc.section.1.p.3">Applications using the application/multipart-core Content-Format define the semantics as well as the internal structure of the application/multipart-core representation according to the syntax described by the CDDL in <a href="#mct-cddl" class="xref">Figure 1</a>.</p>
 <p id="rfc.section.1.p.4">For example, one way to structure the sub-types specific to an application/multipart-core container is to always include them at the same fixed position.  This specification allows to indicate that an optional part is not present by substituting a null value for the representation of the part.</p>
@@ -531,7 +531,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <dt>Published specification:</dt>
 <dd style="margin-left: 8">RFCthis</dd>
 <dt>Applications that use this media type:</dt>
-<dd style="margin-left: 8">Applications that need to combine representations of potentially several media types into one, e.g., EST-CoAP <a href="#I-D.ietf-ace-coap-est" class="xref">[I-D.ietf-ace-coap-est]</a>
+<dd style="margin-left: 8">Applications that need to combine representations of zero or more different media types into one, e.g., EST-CoAP <a href="#I-D.ietf-ace-coap-est" class="xref">[I-D.ietf-ace-coap-est]</a>
 </dd>
 <dt>Fragment identifier considerations:</dt>
 <dd style="margin-left: 8">N/A</dd>
