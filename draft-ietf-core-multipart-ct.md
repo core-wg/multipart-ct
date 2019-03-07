@@ -230,7 +230,10 @@ Applications that use this media type:
   media types into one, e.g., EST-CoAP {{-est-coap}}
 
 Fragment identifier considerations:
-: N/A
+: The syntax and semantics of fragment identifiers specified for
+  "application/multipart-core" is as specified for "application/cbor".
+  (At publication of this document, there is no fragment
+  identification syntax defined for "application/cbor".)
 
 Additional information:
 :     Deprecated alias names for this type:
