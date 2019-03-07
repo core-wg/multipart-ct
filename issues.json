@@ -1,6 +1,60 @@
 [
 
   {
+    "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/20",
+    "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
+    "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/20/labels{/name}",
+    "comments_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/20/comments",
+    "events_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/20/events",
+    "html_url": "https://github.com/core-wg/multipart-ct/pull/20",
+    "id": 409871167,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjUyNzQ2MDc5",
+    "number": 20,
+    "title": "update affiliation",
+    "user": {
+      "login": "thomas-fossati",
+      "id": 9195842,
+      "node_id": "MDQ6VXNlcjkxOTU4NDI=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9195842?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomas-fossati",
+      "html_url": "https://github.com/thomas-fossati",
+      "followers_url": "https://api.github.com/users/thomas-fossati/followers",
+      "following_url": "https://api.github.com/users/thomas-fossati/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomas-fossati/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomas-fossati/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomas-fossati/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomas-fossati/orgs",
+      "repos_url": "https://api.github.com/users/thomas-fossati/repos",
+      "events_url": "https://api.github.com/users/thomas-fossati/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomas-fossati/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2019-02-13T15:49:58Z",
+    "updated_at": "2019-03-06T14:12:33Z",
+    "closed_at": "2019-02-13T15:54:09Z",
+    "author_association": "CONTRIBUTOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/20",
+      "html_url": "https://github.com/core-wg/multipart-ct/pull/20",
+      "diff_url": "https://github.com/core-wg/multipart-ct/pull/20.diff",
+      "patch_url": "https://github.com/core-wg/multipart-ct/pull/20.patch"
+    },
+    "body": ""
+  },
+  {
     "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/19",
     "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
     "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/19/labels{/name}",
@@ -43,7 +97,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-30T16:10:57Z",
-    "updated_at": "2019-01-30T16:24:54Z",
+    "updated_at": "2019-03-06T14:12:29Z",
     "closed_at": "2019-01-30T16:24:54Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
@@ -196,7 +250,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -205,8 +259,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T20:59:36Z",
-    "updated_at": "2019-01-28T20:59:36Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:12:57Z",
+    "closed_at": "2019-03-07T14:12:57Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/16",
@@ -259,7 +313,7 @@
     "milestone": null,
     "comments": 1,
     "created_at": "2019-01-28T20:46:07Z",
-    "updated_at": "2019-01-29T15:25:20Z",
+    "updated_at": "2019-03-07T14:00:48Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "pull_request": {
@@ -313,7 +367,7 @@
     "milestone": null,
     "comments": 2,
     "created_at": "2019-01-28T20:43:24Z",
-    "updated_at": "2019-01-29T15:30:58Z",
+    "updated_at": "2019-03-07T13:59:33Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "pull_request": {
@@ -467,9 +521,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2019-01-28T17:27:44Z",
-    "updated_at": "2019-01-28T17:27:44Z",
+    "updated_at": "2019-03-07T14:03:12Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "Carsten adds:\r\n> Should we also copy the text: “(At\r\n>     publication of this document, there is no fragment identification\r\n>     syntax defined for “application/cbor”.)\"\r\n> ?"
@@ -515,9 +569,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2019-01-28T17:27:23Z",
-    "updated_at": "2019-01-30T16:01:32Z",
+    "updated_at": "2019-03-07T14:08:01Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "Include one more byte for the CBOR array."
@@ -618,9 +672,9 @@
 
     ],
     "milestone": null,
-    "comments": 1,
+    "comments": 2,
     "created_at": "2019-01-28T17:26:42Z",
-    "updated_at": "2019-01-30T17:20:24Z",
+    "updated_at": "2019-03-07T14:13:52Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> I see that draft-ietf-core-coap-pubsub-05 is still proposing a\r\n> new response code (2.07) for this scenario. Will -pubsub switch to\r\n> -multipart-ct as described in this section? If not, better remove the\r\n> example."
@@ -810,7 +864,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -819,8 +873,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:24:14Z",
-    "updated_at": "2019-01-28T17:24:14Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:12:57Z",
+    "closed_at": "2019-03-07T14:12:57Z",
     "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] Applications using the application/multipart-core Content-Format\r\ndefine the internal structure of the application/multipart-core\r\nrepresentation.\r\n```\r\nWe should add something like: \" within the syntactical boundaries defined by\r\nthe CDDL in Figure 1.\""
   },
