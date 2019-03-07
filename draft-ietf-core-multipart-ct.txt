@@ -93,8 +93,9 @@ Table of Contents
    on multiple already existing media types.
 
    Applications using the application/multipart-core Content-Format
-   define the internal structure of the application/multipart-core
-   representation.
+   define the semantics as well as the internal structure of the
+   application/multipart-core representation according to the syntax
+   described by the CDDL in Figure 1.
 
    For example, one way to structure the sub-types specific to an
    application/multipart-core container is to always include them at the
@@ -105,7 +106,6 @@ Table of Contents
    Optionally, an application might use the general format defined here,
    but also register a new media type and an associated Content-Format
    identifier instead of using application/multipart-core.
-
 
 
 
@@ -343,13 +343,13 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
               "EST over secure CoAP (EST-coaps)", draft-ietf-ace-coap-
-              est-08 (work in progress), February 2019.
+              est-09 (work in progress), February 2019.
 
    [I-D.ietf-cbor-cddl]
               Birkholz, H., Vigano, C., and C. Bormann, "Concise data
               definition language (CDDL): a notational convention to
               express CBOR and JSON data structures", draft-ietf-cbor-
-              cddl-06 (work in progress), November 2018.
+              cddl-07 (work in progress), February 2019.
 
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
               Specifications and Registration Procedures", BCP 13,
