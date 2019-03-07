@@ -55,7 +55,7 @@ informative:
 
 This memo defines application/multipart-core, an
 application-independent media-type that can be used
-to combine representations of several different media types into a single
+to combine representations of zero or more different media types into a single
 message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP
 Content-Format identifier.
 
@@ -64,7 +64,7 @@ Content-Format identifier.
 # Introduction
 
 This memo defines application/multipart-core, an application-independent
-media-type that can be used to combine representations of several different media types
+media-type that can be used to combine representations of zero or more different media types
 into a single message, such as a CoAP {{-coap}} request or response body, with minimal framing
 overhead, each along with a CoAP Content-Format identifier.
 
@@ -226,8 +226,8 @@ Published specification:
 : RFCthis
 
 Applications that use this media type:
-: Applications that need to combine representations of potentially
-  several media types into one, e.g., EST-CoAP {{-est-coap}}
+: Applications that need to combine representations of zero or more different
+  media types into one, e.g., EST-CoAP {{-est-coap}}
 
 Fragment identifier considerations:
 : N/A
