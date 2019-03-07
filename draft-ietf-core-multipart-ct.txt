@@ -229,8 +229,8 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       0x82 0x00 0x4b H e l l o 0x20 w o r l d
 
    In effect, the serialization for a single object is done by prefixing
-   the object with information about its content-format (here: 0x82
-   0x00) and its length (here: 0x4b).
+   the object with information that there is one object (here: 0x82),
+   about its content-format (here: 0x00) and its length (here: 0x4b).
 
    For more than one representation included in an application/
    multipart-core representation, the head of the CBOR array is adjusted
@@ -264,15 +264,15 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       combine representations of zero or more different media types into
       one, e.g., EST-CoAP [I-D.ietf-ace-coap-est]
 
-   Fragment identifier considerations:  N/A
+   Fragment identifier considerations:  The syntax and semantics of
+      fragment identifiers specified for "application/multipart-core" is
+      as specified for "application/cbor".  (At publication of this
+      document, there is no fragment identification syntax defined for
+      "application/cbor".)
 
    Additional information:
 
       Deprecated alias names for this type:  N/A
-
-      Magic number(s):  N/A
-
-      File extension(s):  N/A
 
 
 
@@ -281,6 +281,10 @@ Fossati, et al.         Expires February 8, 2019                [Page 5]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+      Magic number(s):  N/A
+
+      File extension(s):  N/A
 
       Macintosh file type code(s):  N/A
 
@@ -326,10 +330,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
 
-   [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
-              Application Protocol (CoAP)", RFC 7252,
-              DOI 10.17487/RFC7252, June 2014,
-              <https://www.rfc-editor.org/info/rfc7252>.
 
 
 
@@ -337,6 +337,11 @@ Fossati, et al.         Expires February 8, 2019                [Page 6]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+   [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
+              Application Protocol (CoAP)", RFC 7252,
+              DOI 10.17487/RFC7252, June 2014,
+              <https://www.rfc-editor.org/info/rfc7252>.
 
 7.2.  Informative References
 
@@ -377,13 +382,8 @@ Authors' Addresses
    Email: thomas.fossati@arm.com
 
 
-   Klaus Hartke
-   Ericsson
-   Torshamnsgatan 23
-   Stockholm  SE-16483
-   Sweden
 
-   Email: klaus.hartke@ericsson.com
+
 
 
 
@@ -394,6 +394,15 @@ Fossati, et al.         Expires February 8, 2019                [Page 7]
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
+   Klaus Hartke
+   Ericsson
+   Torshamnsgatan 23
+   Stockholm  SE-16483
+   Sweden
+
+   Email: klaus.hartke@ericsson.com
+
+
    Carsten Bormann
    Universitaet Bremen TZI
    Postfach 330440
@@ -402,15 +411,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
    Phone: +49-421-218-63921
    Email: cabo@tzi.org
-
-
-
-
-
-
-
-
-
 
 
 
