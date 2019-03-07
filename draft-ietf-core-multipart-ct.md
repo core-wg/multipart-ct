@@ -122,6 +122,11 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 ~~~
 {:#mct-cddl title="CDDL for application/multipart-core"}
 
+This format is intended as a strict specification: An implementation
+SHOULD stop processing the representation if there is a CBOR
+well-formedness error, a deviation from the structure defined above,
+or any residual data left after processing the CBOR data item.
+
 # Usage Examples
 
 ## Observing Resources
