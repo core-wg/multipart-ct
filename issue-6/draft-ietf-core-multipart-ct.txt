@@ -73,7 +73,7 @@ Table of Contents
      5.1.  Registration of media type application/multipart-core . .   5
      5.2.  Registration of a Content-Format identifier for
            application/multipart-core  . . . . . . . . . . . . . . .   6
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
@@ -244,8 +244,8 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       0x82 0x00 0x4b H e l l o 0x20 w o r l d
 
    In effect, the serialization for a single object is done by prefixing
-   the object with information that there is one object (here: 0x82),
-   about its content-format (here: 0x00) and its length (here: 0x4b).
+   the object with information about its content-format (here: 0x82
+   0x00) and its length (here: 0x4b).
 
    For more than one representation included in an application/
    multipart-core representation, the head of the CBOR array is adjusted
@@ -286,11 +286,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       combine representations of zero or more different media types into
       one, e.g., EST-CoAP [I-D.ietf-ace-coap-est]
 
-   Fragment identifier considerations:  The syntax and semantics of
-      fragment identifiers specified for "application/multipart-core" is
-      as specified for "application/cbor".  (At publication of this
-      document, there is no fragment identification syntax defined for
-      "application/cbor".)
+   Fragment identifier considerations:  N/A
 
    Additional information:
 
@@ -329,6 +325,10 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
        | application/multipart-core | --       | TBD1 | RFCthis   |
        +----------------------------+----------+------+-----------+
 
+6.  Security Considerations
+
+   The security considerations of [RFC7049] apply.  In particular,
+   resource exhaustion attacks may employ large values for the byte
 
 
 
@@ -338,10 +338,6 @@ Fossati, et al.         Expires February 8, 2019                [Page 6]
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
-6.  Security Considerations
-
-   The security considerations of [RFC7049] apply.  In particular,
-   resource exhaustion attacks may employ large values for the byte
    string size fields, or deeply nested structures of recursively
    embedded application/multipart-core representations.
 
@@ -386,6 +382,10 @@ Acknowledgements
    Most of the text in this draft is from earlier contributions by two
    of the authors, Thomas Fossati and Klaus Hartke.  The re-mix in this
    document is based on the requirements in [I-D.ietf-ace-coap-est],
+   based on discussions with Michael Richardson, Panos Kampanis and
+   Peter van der Stok.
+
+
 
 
 
@@ -393,9 +393,6 @@ Fossati, et al.         Expires February 8, 2019                [Page 7]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
-
-   based on discussions with Michael Richardson, Panos Kampanis and
-   Peter van der Stok.
 
 Authors' Addresses
 
@@ -422,6 +419,9 @@ Authors' Addresses
 
    Phone: +49-421-218-63921
    Email: cabo@tzi.org
+
+
+
 
 
 
