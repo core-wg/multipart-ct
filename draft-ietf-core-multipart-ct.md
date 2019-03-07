@@ -187,8 +187,8 @@ For example, a single text/plain object (content-format 0) of value
 > 0x82 0x00 0x4b H e l l o 0x20 w o r l d
 
 In effect, the serialization for a single object is done by prefixing
-the object with information about its content-format (here: 0x82 0x00)
-and its length (here: 0x4b).
+the object with information that there is one object (here: 0x82),
+about its content-format (here: 0x00) and its length (here: 0x4b).
 
 For more than one representation included in an
 application/multipart-core representation, the head of the CBOR array
@@ -230,7 +230,10 @@ Applications that use this media type:
   media types into one, e.g., EST-CoAP {{-est-coap}}
 
 Fragment identifier considerations:
-: N/A
+: The syntax and semantics of fragment identifiers specified for
+  "application/multipart-core" is as specified for "application/cbor".
+  (At publication of this document, there is no fragment
+  identification syntax defined for "application/cbor".)
 
 Additional information:
 :     Deprecated alias names for this type:
