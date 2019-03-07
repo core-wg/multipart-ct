@@ -280,14 +280,14 @@ ul.toc li {
 <link href="#rfc.section.2" rel="Chapter" title="2 Multipart Content-Format Encoding">
 <link href="#rfc.section.3" rel="Chapter" title="3 Usage Examples">
 <link href="#rfc.section.3.1" rel="Chapter" title="3.1 Observing Resources">
-<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Implementation hints">
-<link href="#rfc.section.4" rel="Chapter" title="4 IANA Considerations">
-<link href="#rfc.section.4.1" rel="Chapter" title="4.1 Registration of media type application/multipart-core">
-<link href="#rfc.section.4.2" rel="Chapter" title="4.2 Registration of a Content-Format identifier for application/multipart-core">
-<link href="#rfc.section.5" rel="Chapter" title="5 Security Considerations">
-<link href="#rfc.references" rel="Chapter" title="6 References">
-<link href="#rfc.references.1" rel="Chapter" title="6.1 Normative References">
-<link href="#rfc.references.2" rel="Chapter" title="6.2 Informative References">
+<link href="#rfc.section.4" rel="Chapter" title="4 Implementation hints">
+<link href="#rfc.section.5" rel="Chapter" title="5 IANA Considerations">
+<link href="#rfc.section.5.1" rel="Chapter" title="5.1 Registration of media type application/multipart-core">
+<link href="#rfc.section.5.2" rel="Chapter" title="5.2 Registration of a Content-Format identifier for application/multipart-core">
+<link href="#rfc.section.6" rel="Chapter" title="6 Security Considerations">
+<link href="#rfc.references" rel="Chapter" title="7 References">
+<link href="#rfc.references.1" rel="Chapter" title="7.1 Normative References">
+<link href="#rfc.references.2" rel="Chapter" title="7.2 Informative References">
 <link href="#rfc.acknowledgements" rel="Chapter">
 <link href="#rfc.authors" rel="Chapter">
 
@@ -314,7 +314,7 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Internet-Draft</td>
-<td class="right">Nokia</td>
+<td class="right">ARM</td>
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
@@ -368,21 +368,21 @@ ul.toc li {
 </li>
 <ul><li>3.1.   <a href="#rfc.section.3.1">Observing Resources</a>
 </li>
-<li>3.2.   <a href="#rfc.section.3.2">Implementation hints</a>
+</ul><li>4.   <a href="#rfc.section.4">Implementation hints</a>
 </li>
-</ul><li>4.   <a href="#rfc.section.4">IANA Considerations</a>
+<li>5.   <a href="#rfc.section.5">IANA Considerations</a>
 </li>
-<ul><li>4.1.   <a href="#rfc.section.4.1">Registration of media type application/multipart-core</a>
+<ul><li>5.1.   <a href="#rfc.section.5.1">Registration of media type application/multipart-core</a>
 </li>
-<li>4.2.   <a href="#rfc.section.4.2">Registration of a Content-Format identifier for application/multipart-core</a>
+<li>5.2.   <a href="#rfc.section.5.2">Registration of a Content-Format identifier for application/multipart-core</a>
 </li>
-</ul><li>5.   <a href="#rfc.section.5">Security Considerations</a>
+</ul><li>6.   <a href="#rfc.section.6">Security Considerations</a>
 </li>
-<li>6.   <a href="#rfc.references">References</a>
+<li>7.   <a href="#rfc.references">References</a>
 </li>
-<ul><li>6.1.   <a href="#rfc.references.1">Normative References</a>
+<ul><li>7.1.   <a href="#rfc.references.1">Normative References</a>
 </li>
-<li>6.2.   <a href="#rfc.references.2">Informative References</a>
+<li>7.2.   <a href="#rfc.references.2">Informative References</a>
 </li>
 </ul><li><a href="#rfc.acknowledgements">Acknowledgements</a>
 </li>
@@ -397,14 +397,14 @@ ul.toc li {
 </h1>
 <p id="rfc.section.1.p.1">This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single CoAP <a href="#RFC7252" class="xref">[RFC7252]</a> message-body with minimal framing overhead, each along with a CoAP Content-Format identifier.</p>
 <p id="rfc.section.1.p.2">This simple and efficient binary framing mechanism can be employed to create application specific request and response bodies which build on multiple already existing media types.</p>
-<p id="rfc.section.1.p.3">Applications using the application/multipart-core Content-Format define the internal structure of the application/multipart-core representation.</p>
+<p id="rfc.section.1.p.3">Applications using the application/multipart-core Content-Format define the semantics as well as the internal structure of the application/multipart-core representation according to the syntax described by the CDDL in <a href="#mct-cddl" class="xref">Figure 1</a>.</p>
 <p id="rfc.section.1.p.4">For example, one way to structure the sub-types specific to an application/multipart-core container is to always include them at the same fixed position.  This specification allows to indicate that an optional part is not present by substituting a null value for the representation of the part.</p>
-<p id="rfc.section.1.p.5">Optionally, an application might use the general format defined here, but also register a new media type and an associated Content-Format identifier &#8212; typically one in the range 10000-64999 &#8212; instead of using application/multipart-core.</p>
+<p id="rfc.section.1.p.5">Optionally, an application might use the general format defined here, but also register a new media type and an associated Content-Format identifier instead of using application/multipart-core.</p>
 <h1 id="rfc.section.2">
 <a href="#rfc.section.2">2.</a> <a href="#multipart-content-format-encoding" id="multipart-content-format-encoding">Multipart Content-Format Encoding</a>
 </h1>
 <p id="rfc.section.2.p.1">A representation of media-type application/multipart-core contains a collection of zero or more representations, each along with their respective content format.</p>
-<p id="rfc.section.2.p.2">The collection is encoded as a CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.  (Future extensions might want to include additional alternative ways of specifying the media type of a representation in such a position.)</p>
+<p id="rfc.section.2.p.2">The collection is encoded as a CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.</p>
 <p id="rfc.section.2.p.3">For example, a collection containing two representations, one with content format ID 42 and one with content format ID 0, looks like this in CBOR diagnostic notation:</p>
 <p></p>
 
@@ -438,12 +438,12 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 </pre>
 <p class="figure">Figure 2: Sequence of Notifications:</p>
 <p id="rfc.section.3.1.p.2">The specification of the Observe option requires that all notifications carry the same Content-Format.  The application/multipart-core media type can be used to provide that Content-Format: e.g., carrying an empty list of representations in the case marked as &#8220;Pending&#8221; in <a href="#fig-sequence" class="xref">Figure 2</a>, and carrying a single representation specified as the target content-format in the case in the middle of the figure.</p>
-<h1 id="rfc.section.3.2">
-<a href="#rfc.section.3.2">3.2.</a> <a href="#implementation-hints" id="implementation-hints">Implementation hints</a>
+<h1 id="rfc.section.4">
+<a href="#rfc.section.4">4.</a> <a href="#implementation-hints" id="implementation-hints">Implementation hints</a>
 </h1>
-<p id="rfc.section.3.2.p.1">This section describes the serialization for readers that may be new to CBOR.  It does not contain any new information.</p>
-<p id="rfc.section.3.2.p.2">An application/multipart-core representation carrying no representations is represented by an empty CBOR array, which is serialized as a single byte with the value 0x80.</p>
-<p id="rfc.section.3.2.p.3">An application/multipart-core representation carrying a single representation is represented by a two-element CBOR array, which is serialized as 0x82 followed by the two elements.  The first element is an unsigned integer for the Content-Format value, which is represented as described in <a href="#tbl-integer" class="xref">Table 1</a>.  The second element is the object as a byte string, which is represented as a length as described in <a href="#tbl-length" class="xref">Table 2</a> followed by the bytes of the object.</p>
+<p id="rfc.section.4.p.1">This section describes the serialization for readers that may be new to CBOR.  It does not contain any new information.</p>
+<p id="rfc.section.4.p.2">An application/multipart-core representation carrying no representations is represented by an empty CBOR array, which is serialized as a single byte with the value 0x80.</p>
+<p id="rfc.section.4.p.3">An application/multipart-core representation carrying a single representation is represented by a two-element CBOR array, which is serialized as 0x82 followed by the two elements.  The first element is an unsigned integer for the Content-Format value, which is represented as described in <a href="#tbl-integer" class="xref">Table 1</a>.  The second element is the object as a byte string, which is represented as a length as described in <a href="#tbl-length" class="xref">Table 2</a> followed by the bytes of the object.</p>
 <div id="rfc.table.1"></div>
 <div id="tbl-integer"></div>
 <table cellpadding="3" cellspacing="0" class="tt full center">
@@ -498,19 +498,19 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 </tr>
 </tbody>
 </table>
-<p id="rfc.section.3.2.p.4">For example, a single text/plain object (content-format 0) of value &#8220;Hello World&#8221; (11 characters) would be serialized as</p>
+<p id="rfc.section.4.p.4">For example, a single text/plain object (content-format 0) of value &#8220;Hello World&#8221; (11 characters) would be serialized as</p>
 <p></p>
 
 <ul class="empty"><li>0x82 0x00 0x4b H e l l o 0x20 w o r l d</li></ul>
-<p id="rfc.section.3.2.p.6">In effect, the serialization for a single object is done by prefixing the object with information about its content-format (here: 0x82 0x00) and its length (here: 0x4b).</p>
-<p id="rfc.section.3.2.p.7">For more than one representation included in an application/multipart-core representation, the head of the CBOR array is adjusted (0x84 for two representations, 0x86 for three, &#8230;) and the sequences of content-format and embedded representations follow.</p>
-<h1 id="rfc.section.4">
-<a href="#rfc.section.4">4.</a> <a href="#IANA" id="IANA">IANA Considerations</a>
+<p id="rfc.section.4.p.6">In effect, the serialization for a single object is done by prefixing the object with information about its content-format (here: 0x82 0x00) and its length (here: 0x4b).</p>
+<p id="rfc.section.4.p.7">For more than one representation included in an application/multipart-core representation, the head of the CBOR array is adjusted (0x84 for two representations, 0x86 for three, &#8230;) and the sequences of content-format and embedded representations follow.</p>
+<h1 id="rfc.section.5">
+<a href="#rfc.section.5">5.</a> <a href="#IANA" id="IANA">IANA Considerations</a>
 </h1>
-<h1 id="rfc.section.4.1">
-<a href="#rfc.section.4.1">4.1.</a> <a href="#registration-of-media-type-applicationmultipart-core" id="registration-of-media-type-applicationmultipart-core">Registration of media type application/multipart-core</a>
+<h1 id="rfc.section.5.1">
+<a href="#rfc.section.5.1">5.1.</a> <a href="#registration-of-media-type-applicationmultipart-core" id="registration-of-media-type-applicationmultipart-core">Registration of media type application/multipart-core</a>
 </h1>
-<p id="rfc.section.4.1.p.1">IANA is requested to register the following media type <a href="#RFC6838" class="xref">[RFC6838]</a>:</p>
+<p id="rfc.section.5.1.p.1">IANA is requested to register the following media type <a href="#RFC6838" class="xref">[RFC6838]</a>:</p>
 <p></p>
 
 <dl>
@@ -562,10 +562,10 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <dt>Provisional registration? (standards tree only):</dt>
 <dd style="margin-left: 8">no</dd>
 </dl>
-<h1 id="rfc.section.4.2">
-<a href="#rfc.section.4.2">4.2.</a> <a href="#registration-of-a-content-format-identifier-for-applicationmultipart-core" id="registration-of-a-content-format-identifier-for-applicationmultipart-core">Registration of a Content-Format identifier for application/multipart-core</a>
+<h1 id="rfc.section.5.2">
+<a href="#rfc.section.5.2">5.2.</a> <a href="#registration-of-a-content-format-identifier-for-applicationmultipart-core" id="registration-of-a-content-format-identifier-for-applicationmultipart-core">Registration of a Content-Format identifier for application/multipart-core</a>
 </h1>
-<p id="rfc.section.4.2.p.1">IANA is requested to register the following Content-Format to the &#8220;CoAP Content-Formats&#8221; subregistry, within the &#8220;Constrained RESTful Environments (CoRE) Parameters&#8221; registry, from the Expert Review space (0..255):</p>
+<p id="rfc.section.5.2.p.1">IANA is requested to register the following Content-Format to the &#8220;CoAP Content-Formats&#8221; subregistry, within the &#8220;Constrained RESTful Environments (CoRE) Parameters&#8221; registry, from the Expert Review space (0..255):</p>
 <table cellpadding="3" cellspacing="0" class="tt full center">
 <thead><tr>
 <th class="left">Media Type</th>
@@ -580,14 +580,14 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <td class="left">RFCthis</td>
 </tr></tbody>
 </table>
-<h1 id="rfc.section.5">
-<a href="#rfc.section.5">5.</a> <a href="#Security" id="Security">Security Considerations</a>
+<h1 id="rfc.section.6">
+<a href="#rfc.section.6">6.</a> <a href="#Security" id="Security">Security Considerations</a>
 </h1>
-<p id="rfc.section.5.p.1">The security considerations of <a href="#RFC7049" class="xref">[RFC7049]</a> apply.  In particular, resource exhaustion attacks may employ large values for the byte string size fields, or deeply nested structures of recursively embedded application/multipart-core representations.</p>
+<p id="rfc.section.6.p.1">The security considerations of <a href="#RFC7049" class="xref">[RFC7049]</a> apply.  In particular, resource exhaustion attacks may employ large values for the byte string size fields, or deeply nested structures of recursively embedded application/multipart-core representations.</p>
 <h1 id="rfc.references">
-<a href="#rfc.references">6.</a> References</h1>
+<a href="#rfc.references">7.</a> References</h1>
 <h1 id="rfc.references.1">
-<a href="#rfc.references.1">6.1.</a> Normative References</h1>
+<a href="#rfc.references.1">7.1.</a> Normative References</h1>
 <table><tbody>
 <tr>
 <td class="reference"><b id="RFC7049">[RFC7049]</b></td>
@@ -599,14 +599,9 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <td class="top">
 <a>Shelby, Z.</a>, <a>Hartke, K.</a> and <a>C. Bormann</a>, "<a href="https://tools.ietf.org/html/rfc7252">The Constrained Application Protocol (CoAP)</a>", RFC 7252, DOI 10.17487/RFC7252, June 2014.</td>
 </tr>
-<tr>
-<td class="reference"><b id="RFC7641">[RFC7641]</b></td>
-<td class="top">
-<a>Hartke, K.</a>, "<a href="https://tools.ietf.org/html/rfc7641">Observing Resources in the Constrained Application Protocol (CoAP)</a>", RFC 7641, DOI 10.17487/RFC7641, September 2015.</td>
-</tr>
 </tbody></table>
 <h1 id="rfc.references.2">
-<a href="#rfc.references.2">6.2.</a> Informative References</h1>
+<a href="#rfc.references.2">7.2.</a> Informative References</h1>
 <table><tbody>
 <tr>
 <td class="reference"><b id="I-D.ietf-ace-coap-est">[I-D.ietf-ace-coap-est]</b></td>
@@ -623,6 +618,11 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <td class="top">
 <a>Freed, N.</a>, <a>Klensin, J.</a> and <a>T. Hansen</a>, "<a href="https://tools.ietf.org/html/rfc6838">Media Type Specifications and Registration Procedures</a>", BCP 13, RFC 6838, DOI 10.17487/RFC6838, January 2013.</td>
 </tr>
+<tr>
+<td class="reference"><b id="RFC7641">[RFC7641]</b></td>
+<td class="top">
+<a>Hartke, K.</a>, "<a href="https://tools.ietf.org/html/rfc7641">Observing Resources in the Constrained Application Protocol (CoAP)</a>", RFC 7641, DOI 10.17487/RFC7641, September 2015.</td>
+</tr>
 </tbody></table>
 <h1 id="rfc.acknowledgements"><a href="#rfc.acknowledgements">Acknowledgements</a></h1>
 <p id="rfc.section.A.p.1">Most of the text in this draft is from earlier contributions by two of the authors, Thomas Fossati and Klaus Hartke.  The re-mix in this document is based on the requirements in <a href="#I-D.ietf-ace-coap-est" class="xref">[I-D.ietf-ace-coap-est]</a>, based on discussions with Michael Richardson, Panos Kampanis and Peter van der Stok.</p>
@@ -635,7 +635,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 		<span class="family-name">Fossati</span>
 	  </span>
 	</span>
-	<span class="org vcardline">Nokia</span>
+	<span class="org vcardline">ARM</span>
 	<span class="adr">
 	  
 	  <span class="vcardline">
@@ -645,7 +645,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 	  </span>
 	  <span class="country-name vcardline"></span>
 	</span>
-	<span class="vcardline">EMail: <a href="mailto:thomas.fossati@nokia.com">thomas.fossati@nokia.com</a></span>
+	<span class="vcardline">EMail: <a href="mailto:thomas.fossati@arm.com">thomas.fossati@arm.com</a></span>
 
   </address>
 </div><div class="avoidbreak">
