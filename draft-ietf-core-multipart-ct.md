@@ -22,8 +22,8 @@ date: 2018-08-07
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
-  org: Nokia
-  email: thomas.fossati@nokia.com
+  org: ARM
+  email: thomas.fossati@arm.com
 -
   name: Klaus Hartke
   org: Ericsson
@@ -46,8 +46,8 @@ author:
 normative:
   RFC7049: cbor
   RFC7252: coap
-  RFC7641: observe
 informative:
+  RFC7641: observe
   I-D.ietf-ace-coap-est: est-coap
   I-D.ietf-cbor-cddl: cddl
 
@@ -56,7 +56,7 @@ informative:
 This memo defines application/multipart-core, an
 application-independent media-type that can be used
 to combine representations of zero or more different media types into a single
-CoAP message-body with minimal framing overhead, each along with a CoAP
+message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP
 Content-Format identifier.
 
 --- middle
@@ -65,7 +65,7 @@ Content-Format identifier.
 
 This memo defines application/multipart-core, an application-independent
 media-type that can be used to combine representations of zero or more different media types
-into a single CoAP {{-coap}} message-body with minimal framing
+into a single message, such as a CoAP {{-coap}} request or response body, with minimal framing
 overhead, each along with a CoAP Content-Format identifier.
 
 This simple and efficient binary framing mechanism can be employed to
@@ -73,7 +73,8 @@ create application specific request and response bodies which build on
 multiple already existing media types.
 
 Applications using the application/multipart-core Content-Format define the
-internal structure of the application/multipart-core representation.
+semantics as well as the internal structure of the application/multipart-core representation
+according to the syntax described by the CDDL in {{mct-cddl}}.
 
 For example, one way to structure the sub-types specific to an application/multipart-core
 container is to always include them at the same fixed position.
@@ -82,8 +83,7 @@ present by substituting a null value for the representation of the part.
 
 Optionally, an application might use the general format defined here,
 but also register a new media type and an associated Content-Format
-identifier --- typically one in the range 10000-64999 --- instead of
-using application/multipart-core.
+identifier instead of using application/multipart-core.
 
 
 <!--  Leave out until needed:
@@ -106,8 +106,6 @@ a representation, or the value `null` if an optional part is indicated
 as not given.
 The first, third, fifth, etc. element is an unsigned integer
 specifying the content format ID of the representation following it.
-(Future extensions might want to include additional alternative ways of
-specifying the media type of a representation in such a position.)
 
 For example, a collection containing two representations, one with
 content format ID 42 and one with content format ID 0, looks like this
@@ -152,8 +150,7 @@ case marked as "Pending" in {{fig-sequence}}, and carrying a single
 representation specified as the target content-format in the case in
 the middle of the figure.
 
-Implementation hints
---------------------
+# Implementation hints
 
 This section describes the serialization for readers that may be new
 to CBOR.  It does not contain any new information.
