@@ -143,9 +143,11 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
                Figure 1: CDDL for application/multipart-core
 
    This format is intended as a strict specification: An implementation
-   SHOULD stop processing the representation if there is a CBOR well-
+   MUST stop processing the representation if there is a CBOR well-
    formedness error, a deviation from the structure defined above, or
-   any residual data left after processing the CBOR data item.
+   any residual data left after processing the CBOR data item.  (This
+   generally means the representation is not processed at all except if
+   some streaming processing has already happened.)
 
 3.  Usage Examples
 
@@ -156,8 +158,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    (Content) notifications before sending the first actual 2.05
    (Content) or 2.03 (Valid) notification.  The possible resulting
    sequence of notifications is shown in Figure 1.
-
-
 
 
 

@@ -417,7 +417,7 @@ multipart-core = [* multipart-part]
 multipart-part = (type: uint .size 2, part: bytes / null)
 </pre>
 <p class="figure">Figure 1: CDDL for application/multipart-core</p>
-<p id="rfc.section.2.p.6">This format is intended as a strict specification: An implementation SHOULD stop processing the representation if there is a CBOR well-formedness error, a deviation from the structure defined above, or any residual data left after processing the CBOR data item.</p>
+<p id="rfc.section.2.p.6">This format is intended as a strict specification: An implementation MUST stop processing the representation if there is a CBOR well-formedness error, a deviation from the structure defined above, or any residual data left after processing the CBOR data item.  (This generally means the representation is not processed at all except if some streaming processing has already happened.)</p>
 <h1 id="rfc.section.3">
 <a href="#rfc.section.3">3.</a> <a href="#usage-examples" id="usage-examples">Usage Examples</a>
 </h1>
