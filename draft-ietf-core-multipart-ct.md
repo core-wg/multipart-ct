@@ -73,7 +73,8 @@ create application specific request and response bodies which build on
 multiple already existing media types.
 
 Applications using the application/multipart-core Content-Format define the
-internal structure of the application/multipart-core representation.
+semantics as well as the internal structure of the application/multipart-core representation
+according to the syntax described by the CDDL in {{mct-cddl}}.
 
 For example, one way to structure the sub-types specific to an application/multipart-core
 container is to always include them at the same fixed position.
