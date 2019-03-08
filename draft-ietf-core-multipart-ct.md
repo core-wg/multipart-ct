@@ -85,6 +85,12 @@ to the application.
 This specification allows to indicate that an optional part is not
 present by substituting a null value for the representation of the part.
 
+A third situation that is common only ever has a single representation
+in the sequence, which is one of a set of formats possible.  This kind
+of union of formats may also make the presence of the actual
+representation optional, the omission of which leads to a zero-length
+array.
+
 Where these rules are not sufficient for an application, it might
 still use the general format defined here, but register a new media
 type and an associated Content-Format identifier to associate the
