@@ -92,20 +92,20 @@ Table of Contents
    create application specific request and response bodies which build
    on multiple already existing media types.
 
-   Applications using the application/multipart-core Content-Format
-   define the semantics as well as the internal structure of the
-   application/multipart-core representation according to the syntax
-   described by the CDDL in Figure 1.
+   The individual representations in an application/multipart-core body
+   occur in a sequence, which may be employed by an application where
+   such a sequence is natural, e.g. for a number of audio snippets in
+   different formats to be played out in that sequence.
 
-   For example, one way to structure the sub-types specific to an
-   application/multipart-core container is to always include them at the
-   same fixed position.  This specification allows to indicate that an
-   optional part is not present by substituting a null value for the
-   representation of the part.
+   In other cases, an application may be more interested in a bag of
+   representations, which are distinguished by their Content-Format
+   identifier, such as an audio snippet and a text representation
+   accompanying it.  In such a case, the sequence in which these occur
+   may not be relevant to the application.  This specification allows to
+   indicate that an optional part is not present by substituting a null
+   value for the representation of the part.
 
-   Optionally, an application might use the general format defined here,
-   but also register a new media type and an associated Content-Format
-   identifier instead of using application/multipart-core.
+
 
 
 
@@ -113,6 +113,12 @@ Fossati, et al.         Expires February 8, 2019                [Page 2]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+   Where these rules are not sufficient for an application, it might
+   still use the general format defined here, but register a new media
+   type and an associated Content-Format identifier to associate the
+   representation with these more specific semantics instead of using
+   application/multipart-core.
 
 2.  Multipart Content-Format Encoding
 
@@ -156,12 +162,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    When a client registers to observe a resource [RFC7641] for which no
    representation is available yet, the server may send one or more 2.05
    (Content) notifications before sending the first actual 2.05
-   (Content) or 2.03 (Valid) notification.  The possible resulting
-   sequence of notifications is shown in Figure 1.
-
-
-
-
 
 
 
@@ -169,6 +169,9 @@ Fossati, et al.         Expires February 8, 2019                [Page 3]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+   (Content) or 2.03 (Valid) notification.  The possible resulting
+   sequence of notifications is shown in Figure 1.
 
          __________       __________       __________
         |          |     |          |     |          |
@@ -214,9 +217,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
                       +----------------+------------+
 
                  Table 1: Serialization of content-format
-
-
-
 
 
 
