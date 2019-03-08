@@ -97,13 +97,9 @@ type and an associated Content-Format identifier to associate the
 representation with these more specific semantics instead of using
 application/multipart-core.
 
-
-<!--  Leave out until needed:
-
 ## Requirements Language
 
-{: :boilerplate bcp14}
--->
+{::boilerplate bcp14}
 
 # Multipart Content-Format Encoding
 
