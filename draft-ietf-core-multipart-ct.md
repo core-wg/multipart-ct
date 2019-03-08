@@ -72,18 +72,30 @@ This simple and efficient binary framing mechanism can be employed to
 create application specific request and response bodies which build on
 multiple already existing media types.
 
-Applications using the application/multipart-core Content-Format define the
-semantics as well as the internal structure of the application/multipart-core representation
-according to the syntax described by the CDDL in {{mct-cddl}}.
+The individual representations in an application/multipart-core body
+occur in a sequence, which may be employed by an application where
+such a sequence is natural, e.g. for a number of audio snippets in
+different formats to be played out in that sequence.
 
-For example, one way to structure the sub-types specific to an application/multipart-core
-container is to always include them at the same fixed position.
+In other cases, an application may be more interested in a bag of
+representations, which are distinguished by their Content-Format identifier,
+such as an audio snippet and a text representation accompanying it.
+In such a case, the sequence in which these occur may not be relevant
+to the application.
 This specification allows to indicate that an optional part is not
 present by substituting a null value for the representation of the part.
 
-Optionally, an application might use the general format defined here,
-but also register a new media type and an associated Content-Format
-identifier instead of using application/multipart-core.
+A third situation that is common only ever has a single representation
+in the sequence, which is one of a set of formats possible.  This kind
+of union of formats may also make the presence of the actual
+representation optional, the omission of which leads to a zero-length
+array.
+
+Where these rules are not sufficient for an application, it might
+still use the general format defined here, but register a new media
+type and an associated Content-Format identifier to associate the
+representation with these more specific semantics instead of using
+application/multipart-core.
 
 
 <!--  Leave out until needed:
@@ -121,6 +133,13 @@ multipart-core = [* multipart-part]
 multipart-part = (type: uint .size 2, part: bytes / null)
 ~~~
 {:#mct-cddl title="CDDL for application/multipart-core"}
+
+This format is intended as a strict specification: An implementation
+MUST stop processing the representation if there is a CBOR
+well-formedness error, a deviation from the structure defined above,
+or any residual data left after processing the CBOR data item.
+(This generally means the representation is not processed at
+all except if some streaming processing has already happened.)
 
 # Usage Examples
 
