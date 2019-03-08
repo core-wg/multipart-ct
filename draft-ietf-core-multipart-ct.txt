@@ -66,19 +66,19 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
-   3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   3
-     3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   3
+   3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   4
    4.  Implementation hints  . . . . . . . . . . . . . . . . . . . .   4
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
      5.1.  Registration of media type application/multipart-core . .   5
      5.2.  Registration of a Content-Format identifier for
-           application/multipart-core  . . . . . . . . . . . . . . .   6
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
+           application/multipart-core  . . . . . . . . . . . . . . .   7
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   8
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -92,20 +92,20 @@ Table of Contents
    create application specific request and response bodies which build
    on multiple already existing media types.
 
-   Applications using the application/multipart-core Content-Format
-   define the semantics as well as the internal structure of the
-   application/multipart-core representation according to the syntax
-   described by the CDDL in Figure 1.
+   The individual representations in an application/multipart-core body
+   occur in a sequence, which may be employed by an application where
+   such a sequence is natural, e.g. for a number of audio snippets in
+   different formats to be played out in that sequence.
 
-   For example, one way to structure the sub-types specific to an
-   application/multipart-core container is to always include them at the
-   same fixed position.  This specification allows to indicate that an
-   optional part is not present by substituting a null value for the
-   representation of the part.
+   In other cases, an application may be more interested in a bag of
+   representations, which are distinguished by their Content-Format
+   identifier, such as an audio snippet and a text representation
+   accompanying it.  In such a case, the sequence in which these occur
+   may not be relevant to the application.  This specification allows to
+   indicate that an optional part is not present by substituting a null
+   value for the representation of the part.
 
-   Optionally, an application might use the general format defined here,
-   but also register a new media type and an associated Content-Format
-   identifier instead of using application/multipart-core.
+
 
 
 
@@ -113,6 +113,18 @@ Fossati, et al.         Expires February 8, 2019                [Page 2]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+   A third situation that is common only ever has a single
+   representation in the sequence, which is one of a set of formats
+   possible.  This kind of union of formats may also make the presence
+   of the actual representation optional, the omission of which leads to
+   a zero-length array.
+
+   Where these rules are not sufficient for an application, it might
+   still use the general format defined here, but register a new media
+   type and an associated Content-Format identifier to associate the
+   representation with these more specific semantics instead of using
+   application/multipart-core.
 
 2.  Multipart Content-Format Encoding
 
@@ -142,6 +154,22 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
                Figure 1: CDDL for application/multipart-core
 
+   This format is intended as a strict specification: An implementation
+   MUST stop processing the representation if there is a CBOR well-
+   formedness error, a deviation from the structure defined above, or
+   any residual data left after processing the CBOR data item.  (This
+   generally means the representation is not processed at all except if
+   some streaming processing has already happened.)
+
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 3]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
+
 3.  Usage Examples
 
 3.1.  Observing Resources
@@ -162,13 +190,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
                    \_______________________/
 
                    Figure 2: Sequence of Notifications:
-
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 3]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
 
    The specification of the Observe option requires that all
    notifications carry the same Content-Format.  The application/
@@ -193,6 +214,17 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    represented as described in Table 1.  The second element is the
    object as a byte string, which is represented as a length as
    described in Table 2 followed by the bytes of the object.
+
+
+
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 4]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
 
                       +----------------+------------+
                       | Serialization  | Value      |
@@ -219,13 +251,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    For example, a single text/plain object (content-format 0) of value
    "Hello World" (11 characters) would be serialized as
 
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 4]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
-
       0x82 0x00 0x4b H e l l o 0x20 w o r l d
 
    In effect, the serialization for a single object is done by prefixing
@@ -248,6 +273,14 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    Subtype name:  multipart-core
 
    Required parameters:  N/A
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 5]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
 
    Optional parameters:  N/A
 
@@ -274,14 +307,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
       Deprecated alias names for this type:  N/A
 
-
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 5]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
-
       Magic number(s):  N/A
 
       File extension(s):  N/A
@@ -300,6 +325,18 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    Change controller:  IESG
 
    Provisional registration? (standards tree only):  no
+
+
+
+
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 6]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
 
 5.2.  Registration of a Content-Format identifier for application/
       multipart-core
@@ -330,14 +367,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
 
-
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 6]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
-
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014,
@@ -348,13 +377,22 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
               "EST over secure CoAP (EST-coaps)", draft-ietf-ace-coap-
-              est-09 (work in progress), February 2019.
+              est-10 (work in progress), March 2019.
 
    [I-D.ietf-cbor-cddl]
               Birkholz, H., Vigano, C., and C. Bormann, "Concise data
               definition language (CDDL): a notational convention to
               express CBOR and JSON data structures", draft-ietf-cbor-
               cddl-07 (work in progress), February 2019.
+
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 7]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
 
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
               Specifications and Registration Procedures", BCP 13,
@@ -382,18 +420,6 @@ Authors' Addresses
    Email: thomas.fossati@arm.com
 
 
-
-
-
-
-
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 7]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
-
    Klaus Hartke
    Ericsson
    Torshamnsgatan 23
@@ -411,32 +437,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
    Phone: +49-421-218-63921
    Email: cabo@tzi.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
