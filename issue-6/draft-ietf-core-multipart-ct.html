@@ -504,7 +504,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <p></p>
 
 <ul class="empty"><li>0x82 0x00 0x4b H e l l o 0x20 w o r l d</li></ul>
-<p id="rfc.section.4.p.6">In effect, the serialization for a single object is done by prefixing the object with information about its content-format (here: 0x82 0x00) and its length (here: 0x4b).</p>
+<p id="rfc.section.4.p.6">In effect, the serialization for a single object is done by prefixing the object with information that there is one object (here: 0x82), about its content-format (here: 0x00) and its length (here: 0x4b).</p>
 <p id="rfc.section.4.p.7">For more than one representation included in an application/multipart-core representation, the head of the CBOR array is adjusted (0x84 for two representations, 0x86 for three, &#8230;) and the sequences of content-format and embedded representations follow.</p>
 <h1 id="rfc.section.5">
 <a href="#rfc.section.5">5.</a> <a href="#IANA" id="IANA">IANA Considerations</a>
@@ -536,7 +536,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <dd style="margin-left: 8">Applications that need to combine representations of zero or more different media types into one, e.g., EST-CoAP <a href="#I-D.ietf-ace-coap-est" class="xref">[I-D.ietf-ace-coap-est]</a>
 </dd>
 <dt>Fragment identifier considerations:</dt>
-<dd style="margin-left: 8">N/A</dd>
+<dd style="margin-left: 8">The syntax and semantics of fragment identifiers specified for &#8220;application/multipart-core&#8221; is as specified for &#8220;application/cbor&#8221;.  (At publication of this document, there is no fragment identification syntax defined for &#8220;application/cbor&#8221;.)</dd>
 <dt>Additional information:</dt>
 <dd style="margin-left: 8">
 <dl>

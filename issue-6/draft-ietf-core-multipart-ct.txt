@@ -72,7 +72,7 @@ Table of Contents
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
      5.1.  Registration of media type application/multipart-core . .   5
      5.2.  Registration of a Content-Format identifier for
-           application/multipart-core  . . . . . . . . . . . . . . .   6
+           application/multipart-core  . . . . . . . . . . . . . . .   7
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
@@ -254,8 +254,8 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       0x82 0x00 0x4b H e l l o 0x20 w o r l d
 
    In effect, the serialization for a single object is done by prefixing
-   the object with information about its content-format (here: 0x82
-   0x00) and its length (here: 0x4b).
+   the object with information that there is one object (here: 0x82),
+   about its content-format (here: 0x00) and its length (here: 0x4b).
 
    For more than one representation included in an application/
    multipart-core representation, the head of the CBOR array is adjusted
@@ -297,7 +297,11 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       combine representations of zero or more different media types into
       one, e.g., EST-CoAP [I-D.ietf-ace-coap-est]
 
-   Fragment identifier considerations:  N/A
+   Fragment identifier considerations:  The syntax and semantics of
+      fragment identifiers specified for "application/multipart-core" is
+      as specified for "application/cbor".  (At publication of this
+      document, there is no fragment identification syntax defined for
+      "application/cbor".)
 
    Additional information:
 
@@ -322,13 +326,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
    Provisional registration? (standards tree only):  no
 
-5.2.  Registration of a Content-Format identifier for application/
-      multipart-core
 
-   IANA is requested to register the following Content-Format to the
-   "CoAP Content-Formats" subregistry, within the "Constrained RESTful
-   Environments (CoRE) Parameters" registry, from the Expert Review
-   space (0..255):
+
+
 
 
 
@@ -337,6 +337,14 @@ Fossati, et al.         Expires February 8, 2019                [Page 6]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+5.2.  Registration of a Content-Format identifier for application/
+      multipart-core
+
+   IANA is requested to register the following Content-Format to the
+   "CoAP Content-Formats" subregistry, within the "Constrained RESTful
+   Environments (CoRE) Parameters" registry, from the Expert Review
+   space (0..255):
 
        +----------------------------+----------+------+-----------+
        | Media Type                 | Encoding | ID   | Reference |
@@ -377,6 +385,15 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
               express CBOR and JSON data structures", draft-ietf-cbor-
               cddl-07 (work in progress), February 2019.
 
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 7]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
+
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
               Specifications and Registration Procedures", BCP 13,
               RFC 6838, DOI 10.17487/RFC6838, January 2013,
@@ -386,13 +403,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
               Application Protocol (CoAP)", RFC 7641,
               DOI 10.17487/RFC7641, September 2015,
               <https://www.rfc-editor.org/info/rfc7641>.
-
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 7]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
 
 Acknowledgements
 
@@ -427,16 +437,6 @@ Authors' Addresses
 
    Phone: +49-421-218-63921
    Email: cabo@tzi.org
-
-
-
-
-
-
-
-
-
-
 
 
 
