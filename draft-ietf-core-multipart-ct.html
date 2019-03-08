@@ -282,6 +282,7 @@ ul.toc li {
 
   <link href="#rfc.toc" rel="Contents">
 <link href="#rfc.section.1" rel="Chapter" title="1 Introduction">
+<link href="#rfc.section.1.1" rel="Chapter" title="1.1 Requirements Language">
 <link href="#rfc.section.2" rel="Chapter" title="2 Multipart Content-Format Encoding">
 <link href="#rfc.section.3" rel="Chapter" title="3 Usage Examples">
 <link href="#rfc.section.3.1" rel="Chapter" title="3.1 Observing Resources">
@@ -367,7 +368,9 @@ ul.toc li {
 
   	<li>1.   <a href="#rfc.section.1">Introduction</a>
 </li>
-<li>2.   <a href="#rfc.section.2">Multipart Content-Format Encoding</a>
+<ul><li>1.1.   <a href="#rfc.section.1.1">Requirements Language</a>
+</li>
+</ul><li>2.   <a href="#rfc.section.2">Multipart Content-Format Encoding</a>
 </li>
 <li>3.   <a href="#rfc.section.3">Usage Examples</a>
 </li>
@@ -406,6 +409,10 @@ ul.toc li {
 <p id="rfc.section.1.p.4">In other cases, an application may be more interested in a bag of representations, which are distinguished by their Content-Format identifier, such as an audio snippet and a text representation accompanying it.  In such a case, the sequence in which these occur may not be relevant to the application.  This specification allows to indicate that an optional part is not present by substituting a null value for the representation of the part.</p>
 <p id="rfc.section.1.p.5">A third situation that is common only ever has a single representation in the sequence, which is one of a set of formats possible.  This kind of union of formats may also make the presence of the actual representation optional, the omission of which leads to a zero-length array.</p>
 <p id="rfc.section.1.p.6">Where these rules are not sufficient for an application, it might still use the general format defined here, but register a new media type and an associated Content-Format identifier to associate the representation with these more specific semantics instead of using application/multipart-core.</p>
+<h1 id="rfc.section.1.1">
+<a href="#rfc.section.1.1">1.1.</a> <a href="#requirements-language" id="requirements-language">Requirements Language</a>
+</h1>
+<p id="rfc.section.1.1.p.1">The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;, &#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, &#8220;NOT RECOMMENDED&#8221;, &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in BCP&#160;14 <a href="#RFC2119" class="xref">[RFC2119]</a> <a href="#RFC8174" class="xref">[RFC8174]</a> when, and only when, they appear in all capitals, as shown here.</p>
 <h1 id="rfc.section.2">
 <a href="#rfc.section.2">2.</a> <a href="#multipart-content-format-encoding" id="multipart-content-format-encoding">Multipart Content-Format Encoding</a>
 </h1>
@@ -597,6 +604,11 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <a href="#rfc.references.1">7.1.</a> Normative References</h1>
 <table><tbody>
 <tr>
+<td class="reference"><b id="RFC2119">[RFC2119]</b></td>
+<td class="top">
+<a>Bradner, S.</a>, "<a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997.</td>
+</tr>
+<tr>
 <td class="reference"><b id="RFC7049">[RFC7049]</b></td>
 <td class="top">
 <a>Bormann, C.</a> and <a>P. Hoffman</a>, "<a href="https://tools.ietf.org/html/rfc7049">Concise Binary Object Representation (CBOR)</a>", RFC 7049, DOI 10.17487/RFC7049, October 2013.</td>
@@ -605,6 +617,11 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <td class="reference"><b id="RFC7252">[RFC7252]</b></td>
 <td class="top">
 <a>Shelby, Z.</a>, <a>Hartke, K.</a> and <a>C. Bormann</a>, "<a href="https://tools.ietf.org/html/rfc7252">The Constrained Application Protocol (CoAP)</a>", RFC 7252, DOI 10.17487/RFC7252, June 2014.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC8174">[RFC8174]</b></td>
+<td class="top">
+<a>Leiba, B.</a>, "<a href="https://tools.ietf.org/html/rfc8174">Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</a>", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017.</td>
 </tr>
 </tbody></table>
 <h1 id="rfc.references.2">

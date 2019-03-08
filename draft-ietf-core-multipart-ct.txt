@@ -65,6 +65,7 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+     1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   3
    2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
    3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   4
@@ -108,7 +109,6 @@ Table of Contents
 
 
 
-
 Fossati, et al.         Expires September 9, 2019               [Page 2]
 
 Internet-Draft      Multipart Content-Format for CoAP         March 2019
@@ -125,6 +125,14 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
    type and an associated Content-Format identifier to associate the
    representation with these more specific semantics instead of using
    application/multipart-core.
+
+1.1.  Requirements Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
 
 2.  Multipart Content-Format Encoding
 
@@ -154,14 +162,6 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
                Figure 1: CDDL for application/multipart-core
 
-   This format is intended as a strict specification: An implementation
-   MUST stop processing the representation if there is a CBOR well-
-   formedness error, a deviation from the structure defined above, or
-   any residual data left after processing the CBOR data item.  (This
-   generally means the representation is not processed at all except if
-   some streaming processing has already happened.)
-
-
 
 
 
@@ -169,6 +169,13 @@ Fossati, et al.         Expires September 9, 2019               [Page 3]
 
 Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
+
+   This format is intended as a strict specification: An implementation
+   MUST stop processing the representation if there is a CBOR well-
+   formedness error, a deviation from the structure defined above, or
+   any residual data left after processing the CBOR data item.  (This
+   generally means the representation is not processed at all except if
+   some streaming processing has already happened.)
 
 3.  Usage Examples
 
@@ -211,13 +218,6 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
    representation is represented by a two-element CBOR array, which is
    serialized as 0x82 followed by the two elements.  The first element
    is an unsigned integer for the Content-Format value, which is
-   represented as described in Table 1.  The second element is the
-   object as a byte string, which is represented as a length as
-   described in Table 2 followed by the bytes of the object.
-
-
-
-
 
 
 
@@ -225,6 +225,10 @@ Fossati, et al.         Expires September 9, 2019               [Page 4]
 
 Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
+
+   represented as described in Table 1.  The second element is the
+   object as a byte string, which is represented as a length as
+   described in Table 2 followed by the bytes of the object.
 
                       +----------------+------------+
                       | Serialization  | Value      |
@@ -270,10 +274,6 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
    Type name:  application
 
-   Subtype name:  multipart-core
-
-   Required parameters:  N/A
-
 
 
 
@@ -281,6 +281,10 @@ Fossati, et al.         Expires September 9, 2019               [Page 5]
 
 Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
+
+   Subtype name:  multipart-core
+
+   Required parameters:  N/A
 
    Optional parameters:  N/A
 
@@ -329,10 +333,6 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
 
-
-
-
-
 Fossati, et al.         Expires September 9, 2019               [Page 6]
 
 Internet-Draft      Multipart Content-Format for CoAP         March 2019
@@ -363,6 +363,11 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 7.1.  Normative References
 
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
@@ -372,7 +377,22 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
               DOI 10.17487/RFC7252, June 2014,
               <https://www.rfc-editor.org/info/rfc7252>.
 
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
 7.2.  Informative References
+
+
+
+
+
+
+
+Fossati, et al.         Expires September 9, 2019               [Page 7]
+
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
+
 
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
@@ -384,15 +404,6 @@ Internet-Draft      Multipart Content-Format for CoAP         March 2019
               definition language (CDDL): a notational convention to
               express CBOR and JSON data structures", draft-ietf-cbor-
               cddl-07 (work in progress), February 2019.
-
-
-
-
-
-Fossati, et al.         Expires September 9, 2019               [Page 7]
-
-Internet-Draft      Multipart Content-Format for CoAP         March 2019
-
 
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
               Specifications and Registration Procedures", BCP 13,
@@ -429,6 +440,16 @@ Authors' Addresses
    Email: klaus.hartke@ericsson.com
 
 
+
+
+
+
+
+Fossati, et al.         Expires September 9, 2019               [Page 8]
+
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
+
+
    Carsten Bormann
    Universitaet Bremen TZI
    Postfach 330440
@@ -445,4 +466,39 @@ Authors' Addresses
 
 
 
-Fossati, et al.         Expires September 9, 2019               [Page 8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fossati, et al.         Expires September 9, 2019               [Page 9]
