@@ -72,18 +72,24 @@ This simple and efficient binary framing mechanism can be employed to
 create application specific request and response bodies which build on
 multiple already existing media types.
 
-Applications using the application/multipart-core Content-Format define the
-semantics as well as the internal structure of the application/multipart-core representation
-according to the syntax described by the CDDL in {{mct-cddl}}.
+The individual representations in an application/multipart-core body
+occur in a sequence, which may be employed by an application where
+such a sequence is natural, e.g. for a number of audio snippets in
+different formats to be played out in that sequence.
 
-For example, one way to structure the sub-types specific to an application/multipart-core
-container is to always include them at the same fixed position.
+In other cases, an application may be more interested in a bag of
+representations, which are distinguished by their Content-Format identifier,
+such as an audio snippet and a text representation accompanying it.
+In such a case, the sequence in which these occur may not be relevant
+to the application.
 This specification allows to indicate that an optional part is not
 present by substituting a null value for the representation of the part.
 
-Optionally, an application might use the general format defined here,
-but also register a new media type and an associated Content-Format
-identifier instead of using application/multipart-core.
+Where these rules are not sufficient for an application, it might
+still use the general format defined here, but register a new media
+type and an associated Content-Format identifier to associate the
+representation with these more specific semantics instead of using
+application/multipart-core.
 
 
 <!--  Leave out until needed:
