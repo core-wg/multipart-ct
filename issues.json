@@ -1,6 +1,168 @@
 [
 
   {
+    "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/23",
+    "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
+    "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/23/labels{/name}",
+    "comments_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/23/comments",
+    "events_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/23/events",
+    "html_url": "https://github.com/core-wg/multipart-ct/pull/23",
+    "id": 418409917,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjU5MTg5MzE3",
+    "number": 23,
+    "title": "Close #6",
+    "user": {
+      "login": "cabo",
+      "id": 23118,
+      "node_id": "MDQ6VXNlcjIzMTE4",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23118?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cabo",
+      "html_url": "https://github.com/cabo",
+      "followers_url": "https://api.github.com/users/cabo/followers",
+      "following_url": "https://api.github.com/users/cabo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cabo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cabo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cabo/subscriptions",
+      "organizations_url": "https://api.github.com/users/cabo/orgs",
+      "repos_url": "https://api.github.com/users/cabo/repos",
+      "events_url": "https://api.github.com/users/cabo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cabo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 8,
+    "created_at": "2019-03-07T16:48:00Z",
+    "updated_at": "2019-03-08T00:09:18Z",
+    "closed_at": null,
+    "author_association": "CONTRIBUTOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/23",
+      "html_url": "https://github.com/core-wg/multipart-ct/pull/23",
+      "diff_url": "https://github.com/core-wg/multipart-ct/pull/23.diff",
+      "patch_url": "https://github.com/core-wg/multipart-ct/pull/23.patch"
+    },
+    "body": ""
+  },
+  {
+    "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/22",
+    "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
+    "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/22/labels{/name}",
+    "comments_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/22/comments",
+    "events_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/22/events",
+    "html_url": "https://github.com/core-wg/multipart-ct/pull/22",
+    "id": 418405859,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjU5MTg2MTQy",
+    "number": 22,
+    "title": "Close Issue 10",
+    "user": {
+      "login": "cabo",
+      "id": 23118,
+      "node_id": "MDQ6VXNlcjIzMTE4",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23118?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cabo",
+      "html_url": "https://github.com/cabo",
+      "followers_url": "https://api.github.com/users/cabo/followers",
+      "following_url": "https://api.github.com/users/cabo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cabo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cabo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cabo/subscriptions",
+      "organizations_url": "https://api.github.com/users/cabo/orgs",
+      "repos_url": "https://api.github.com/users/cabo/repos",
+      "events_url": "https://api.github.com/users/cabo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cabo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2019-03-07T16:39:41Z",
+    "updated_at": "2019-03-07T16:42:49Z",
+    "closed_at": "2019-03-07T16:42:49Z",
+    "author_association": "CONTRIBUTOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/22",
+      "html_url": "https://github.com/core-wg/multipart-ct/pull/22",
+      "diff_url": "https://github.com/core-wg/multipart-ct/pull/22.diff",
+      "patch_url": "https://github.com/core-wg/multipart-ct/pull/22.patch"
+    },
+    "body": ""
+  },
+  {
+    "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/21",
+    "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
+    "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/21/labels{/name}",
+    "comments_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/21/comments",
+    "events_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/21/events",
+    "html_url": "https://github.com/core-wg/multipart-ct/pull/21",
+    "id": 418404529,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjU5MTg1MDgz",
+    "number": 21,
+    "title": "Define fragment identifier syntax as in CBOR.",
+    "user": {
+      "login": "cabo",
+      "id": 23118,
+      "node_id": "MDQ6VXNlcjIzMTE4",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23118?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cabo",
+      "html_url": "https://github.com/cabo",
+      "followers_url": "https://api.github.com/users/cabo/followers",
+      "following_url": "https://api.github.com/users/cabo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cabo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cabo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cabo/subscriptions",
+      "organizations_url": "https://api.github.com/users/cabo/orgs",
+      "repos_url": "https://api.github.com/users/cabo/repos",
+      "events_url": "https://api.github.com/users/cabo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cabo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2019-03-07T16:36:50Z",
+    "updated_at": "2019-03-07T16:42:50Z",
+    "closed_at": "2019-03-07T16:42:50Z",
+    "author_association": "CONTRIBUTOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/21",
+      "html_url": "https://github.com/core-wg/multipart-ct/pull/21",
+      "diff_url": "https://github.com/core-wg/multipart-ct/pull/21.diff",
+      "patch_url": "https://github.com/core-wg/multipart-ct/pull/21.patch"
+    },
+    "body": ""
+  },
+  {
     "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/20",
     "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
     "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/20/labels{/name}",
@@ -304,7 +466,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -313,8 +475,8 @@
     "milestone": null,
     "comments": 1,
     "created_at": "2019-01-28T20:46:07Z",
-    "updated_at": "2019-03-07T14:00:48Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:33:15Z",
+    "closed_at": "2019-03-07T14:33:15Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/15",
@@ -358,7 +520,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -367,8 +529,8 @@
     "milestone": null,
     "comments": 2,
     "created_at": "2019-01-28T20:43:24Z",
-    "updated_at": "2019-03-07T13:59:33Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:40:30Z",
+    "closed_at": "2019-03-07T14:40:30Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/14",
@@ -514,17 +676,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 1,
+    "comments": 3,
     "created_at": "2019-01-28T17:27:44Z",
-    "updated_at": "2019-03-07T14:03:12Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T16:43:11Z",
+    "closed_at": "2019-03-07T16:43:11Z",
     "author_association": "CONTRIBUTOR",
     "body": "Carsten adds:\r\n> Should we also copy the text: “(At\r\n>     publication of this document, there is no fragment identification\r\n>     syntax defined for “application/cbor”.)\"\r\n> ?"
   },
@@ -562,17 +724,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 1,
+    "comments": 6,
     "created_at": "2019-01-28T17:27:23Z",
-    "updated_at": "2019-03-07T14:08:01Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T16:42:50Z",
+    "closed_at": "2019-03-07T16:42:50Z",
     "author_association": "CONTRIBUTOR",
     "body": "Include one more byte for the CBOR array."
   },
@@ -665,17 +827,17 @@
         "default": true
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 2,
+    "comments": 4,
     "created_at": "2019-01-28T17:26:42Z",
-    "updated_at": "2019-03-07T14:13:52Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:38:37Z",
+    "closed_at": "2019-03-07T14:38:37Z",
     "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> I see that draft-ietf-core-coap-pubsub-05 is still proposing a\r\n> new response code (2.07) for this scenario. Will -pubsub switch to\r\n> -multipart-ct as described in this section? If not, better remove the\r\n> example."
   },
@@ -775,9 +937,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 4,
     "created_at": "2019-01-28T17:25:13Z",
-    "updated_at": "2019-01-30T16:04:12Z",
+    "updated_at": "2019-03-07T17:07:29Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> There should be a sub-section or paragraph specifying what a\r\n> recipient of a application/multipart-core representation should do if\r\n> it encounters something that doesn't match the grammar. Does the whole\r\n> array become unusable when there is an unexpected element, or can a\r\n> recipient use the array up to the unexpected element? Should a\r\n> recipient try to do error recovery and skip to the next element? This\r\n> has impact on how the format can be evolved in the future.\r\n\r\nCarsten seems to prefer failing hard and early (draft-iab-protocol-maintenance).\r\n\r\nThomas loves simplicity and +1 Carsten's proposal."
@@ -912,7 +1074,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -921,8 +1083,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:23:54Z",
-    "updated_at": "2019-01-28T17:23:54Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:33:15Z",
+    "closed_at": "2019-03-07T14:33:15Z",
     "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] into a single CoAP message-body with minimal framing overhead,\r\neach along with a CoAP Content-Format identifier.\r\n```\r\n-> s/message-body/request or response body/"
   },
@@ -960,7 +1122,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -969,8 +1131,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-01-28T17:23:26Z",
-    "updated_at": "2019-01-28T17:23:26Z",
-    "closed_at": null,
+    "updated_at": "2019-03-07T14:40:30Z",
+    "closed_at": "2019-03-07T14:40:30Z",
     "author_association": "CONTRIBUTOR",
     "body": "```\r\n[...] that can be used to combine representations of several different\r\nmedia types\r\n```\r\nIt should not preclude 0, 1 or 2, therefore: s/several/zero or more/"
   },
