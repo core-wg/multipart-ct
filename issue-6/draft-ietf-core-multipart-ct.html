@@ -399,7 +399,8 @@ ul.toc li {
 <p id="rfc.section.1.p.2">This simple and efficient binary framing mechanism can be employed to create application specific request and response bodies which build on multiple already existing media types.</p>
 <p id="rfc.section.1.p.3">The individual representations in an application/multipart-core body occur in a sequence, which may be employed by an application where such a sequence is natural, e.g. for a number of audio snippets in different formats to be played out in that sequence.</p>
 <p id="rfc.section.1.p.4">In other cases, an application may be more interested in a bag of representations, which are distinguished by their Content-Format identifier, such as an audio snippet and a text representation accompanying it.  In such a case, the sequence in which these occur may not be relevant to the application.  This specification allows to indicate that an optional part is not present by substituting a null value for the representation of the part.</p>
-<p id="rfc.section.1.p.5">Where these rules are not sufficient for an application, it might still use the general format defined here, but register a new media type and an associated Content-Format identifier to associate the representation with these more specific semantics instead of using application/multipart-core.</p>
+<p id="rfc.section.1.p.5">A third situation that is common only ever has a single representation in the sequence, which is one of a set of formats possible.  This kind of union of formats may also make the presence of the actual representation optional, the omission of which leads to a zero-length array.</p>
+<p id="rfc.section.1.p.6">Where these rules are not sufficient for an application, it might still use the general format defined here, but register a new media type and an associated Content-Format identifier to associate the representation with these more specific semantics instead of using application/multipart-core.</p>
 <h1 id="rfc.section.2">
 <a href="#rfc.section.2">2.</a> <a href="#multipart-content-format-encoding" id="multipart-content-format-encoding">Multipart Content-Format Encoding</a>
 </h1>
@@ -503,7 +504,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <p></p>
 
 <ul class="empty"><li>0x82 0x00 0x4b H e l l o 0x20 w o r l d</li></ul>
-<p id="rfc.section.4.p.6">In effect, the serialization for a single object is done by prefixing the object with information that there is one object (here: 0x82), about its content-format (here: 0x00) and its length (here: 0x4b).</p>
+<p id="rfc.section.4.p.6">In effect, the serialization for a single object is done by prefixing the object with information about its content-format (here: 0x82 0x00) and its length (here: 0x4b).</p>
 <p id="rfc.section.4.p.7">For more than one representation included in an application/multipart-core representation, the head of the CBOR array is adjusted (0x84 for two representations, 0x86 for three, &#8230;) and the sequences of content-format and embedded representations follow.</p>
 <h1 id="rfc.section.5">
 <a href="#rfc.section.5">5.</a> <a href="#IANA" id="IANA">IANA Considerations</a>
@@ -535,7 +536,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <dd style="margin-left: 8">Applications that need to combine representations of zero or more different media types into one, e.g., EST-CoAP <a href="#I-D.ietf-ace-coap-est" class="xref">[I-D.ietf-ace-coap-est]</a>
 </dd>
 <dt>Fragment identifier considerations:</dt>
-<dd style="margin-left: 8">The syntax and semantics of fragment identifiers specified for &#8220;application/multipart-core&#8221; is as specified for &#8220;application/cbor&#8221;.  (At publication of this document, there is no fragment identification syntax defined for &#8220;application/cbor&#8221;.)</dd>
+<dd style="margin-left: 8">N/A</dd>
 <dt>Additional information:</dt>
 <dd style="margin-left: 8">
 <dl>
@@ -607,7 +608,7 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <tr>
 <td class="reference"><b id="I-D.ietf-ace-coap-est">[I-D.ietf-ace-coap-est]</b></td>
 <td class="top">
-<a>Stok, P.</a>, <a>Kampanakis, P.</a>, <a>Richardson, M.</a> and <a>S. Raza</a>, "<a href="https://tools.ietf.org/html/draft-ietf-ace-coap-est-09">EST over secure CoAP (EST-coaps)</a>", Internet-Draft draft-ietf-ace-coap-est-09, February 2019.</td>
+<a>Stok, P.</a>, <a>Kampanakis, P.</a>, <a>Richardson, M.</a> and <a>S. Raza</a>, "<a href="https://tools.ietf.org/html/draft-ietf-ace-coap-est-10">EST over secure CoAP (EST-coaps)</a>", Internet-Draft draft-ietf-ace-coap-est-10, March 2019.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-cbor-cddl">[I-D.ietf-cbor-cddl]</b></td>

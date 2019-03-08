@@ -66,8 +66,8 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
-   3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   3
-     3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   3
+   3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   4
    4.  Implementation hints  . . . . . . . . . . . . . . . . . . . .   4
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
      5.1.  Registration of media type application/multipart-core . .   5
@@ -77,7 +77,7 @@ Table of Contents
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   8
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
@@ -113,6 +113,12 @@ Fossati, et al.         Expires February 8, 2019                [Page 2]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+   A third situation that is common only ever has a single
+   representation in the sequence, which is one of a set of formats
+   possible.  This kind of union of formats may also make the presence
+   of the actual representation optional, the omission of which leads to
+   a zero-length array.
 
    Where these rules are not sufficient for an application, it might
    still use the general format defined here, but register a new media
@@ -155,13 +161,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    generally means the representation is not processed at all except if
    some streaming processing has already happened.)
 
-3.  Usage Examples
 
-3.1.  Observing Resources
-
-   When a client registers to observe a resource [RFC7641] for which no
-   representation is available yet, the server may send one or more 2.05
-   (Content) notifications before sending the first actual 2.05
 
 
 
@@ -170,6 +170,13 @@ Fossati, et al.         Expires February 8, 2019                [Page 3]
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
+3.  Usage Examples
+
+3.1.  Observing Resources
+
+   When a client registers to observe a resource [RFC7641] for which no
+   representation is available yet, the server may send one or more 2.05
+   (Content) notifications before sending the first actual 2.05
    (Content) or 2.03 (Valid) notification.  The possible resulting
    sequence of notifications is shown in Figure 1.
 
@@ -208,6 +215,17 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    object as a byte string, which is represented as a length as
    described in Table 2 followed by the bytes of the object.
 
+
+
+
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 4]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
+
                       +----------------+------------+
                       | Serialization  | Value      |
                       +----------------+------------+
@@ -217,14 +235,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
                       +----------------+------------+
 
                  Table 1: Serialization of content-format
-
-
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 4]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
 
             +-----------------------------+-------------------+
             | Serialization               | Length            |
@@ -244,8 +254,8 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
       0x82 0x00 0x4b H e l l o 0x20 w o r l d
 
    In effect, the serialization for a single object is done by prefixing
-   the object with information that there is one object (here: 0x82),
-   about its content-format (here: 0x00) and its length (here: 0x4b).
+   the object with information about its content-format (here: 0x82
+   0x00) and its length (here: 0x4b).
 
    For more than one representation included in an application/
    multipart-core representation, the head of the CBOR array is adjusted
@@ -264,6 +274,14 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
    Required parameters:  N/A
 
+
+
+
+Fossati, et al.         Expires February 8, 2019                [Page 5]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2018
+
+
    Optional parameters:  N/A
 
    Encoding considerations:  binary
@@ -275,22 +293,11 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
    Published specification:  RFCthis
 
-
-
-Fossati, et al.         Expires February 8, 2019                [Page 5]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
-
-
    Applications that use this media type:  Applications that need to
       combine representations of zero or more different media types into
       one, e.g., EST-CoAP [I-D.ietf-ace-coap-est]
 
-   Fragment identifier considerations:  The syntax and semantics of
-      fragment identifiers specified for "application/multipart-core" is
-      as specified for "application/cbor".  (At publication of this
-      document, there is no fragment identification syntax defined for
-      "application/cbor".)
+   Fragment identifier considerations:  N/A
 
    Additional information:
 
@@ -323,13 +330,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    Environments (CoRE) Parameters" registry, from the Expert Review
    space (0..255):
 
-       +----------------------------+----------+------+-----------+
-       | Media Type                 | Encoding | ID   | Reference |
-       +----------------------------+----------+------+-----------+
-       | application/multipart-core | --       | TBD1 | RFCthis   |
-       +----------------------------+----------+------+-----------+
-
-
 
 
 
@@ -337,6 +337,12 @@ Fossati, et al.         Expires February 8, 2019                [Page 6]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
+
+       +----------------------------+----------+------+-----------+
+       | Media Type                 | Encoding | ID   | Reference |
+       +----------------------------+----------+------+-----------+
+       | application/multipart-core | --       | TBD1 | RFCthis   |
+       +----------------------------+----------+------+-----------+
 
 6.  Security Considerations
 
@@ -363,7 +369,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
               "EST over secure CoAP (EST-coaps)", draft-ietf-ace-coap-
-              est-09 (work in progress), February 2019.
+              est-10 (work in progress), March 2019.
 
    [I-D.ietf-cbor-cddl]
               Birkholz, H., Vigano, C., and C. Bormann, "Concise data
@@ -381,12 +387,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
               DOI 10.17487/RFC7641, September 2015,
               <https://www.rfc-editor.org/info/rfc7641>.
 
-Acknowledgements
-
-   Most of the text in this draft is from earlier contributions by two
-   of the authors, Thomas Fossati and Klaus Hartke.  The re-mix in this
-   document is based on the requirements in [I-D.ietf-ace-coap-est],
-
 
 
 Fossati, et al.         Expires February 8, 2019                [Page 7]
@@ -394,6 +394,11 @@ Fossati, et al.         Expires February 8, 2019                [Page 7]
 Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
+Acknowledgements
+
+   Most of the text in this draft is from earlier contributions by two
+   of the authors, Thomas Fossati and Klaus Hartke.  The re-mix in this
+   document is based on the requirements in [I-D.ietf-ace-coap-est],
    based on discussions with Michael Richardson, Panos Kampanis and
    Peter van der Stok.
 
@@ -422,11 +427,6 @@ Authors' Addresses
 
    Phone: +49-421-218-63921
    Email: cabo@tzi.org
-
-
-
-
-
 
 
 
