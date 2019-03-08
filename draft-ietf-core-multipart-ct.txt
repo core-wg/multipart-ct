@@ -5,10 +5,10 @@
 CoRE                                                          T. Fossati
 Internet-Draft                                                       ARM
 Intended status: Standards Track                               K. Hartke
-Expires: February 8, 2019                                       Ericsson
+Expires: September 9, 2019                                      Ericsson
                                                               C. Bormann
                                                  Universitaet Bremen TZI
-                                                         August 07, 2018
+                                                          March 08, 2019
 
 
                    Multipart Content-Format for CoAP
@@ -37,11 +37,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 8, 2019.
+   This Internet-Draft will expire on September 9, 2019.
 
 Copyright Notice
 
-   Copyright (c) 2018 IETF Trust and the persons identified as the
+   Copyright (c) 2019 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 1]
+Fossati, et al.         Expires September 9, 2019               [Page 1]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 2]
+Fossati, et al.         Expires September 9, 2019               [Page 2]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
    A third situation that is common only ever has a single
@@ -165,9 +165,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 3]
+Fossati, et al.         Expires September 9, 2019               [Page 3]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
 3.  Usage Examples
@@ -221,9 +221,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 4]
+Fossati, et al.         Expires September 9, 2019               [Page 4]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
                       +----------------+------------+
@@ -277,9 +277,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 5]
+Fossati, et al.         Expires September 9, 2019               [Page 5]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
    Optional parameters:  N/A
@@ -333,9 +333,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 6]
+Fossati, et al.         Expires September 9, 2019               [Page 6]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
 5.2.  Registration of a Content-Format identifier for application/
@@ -389,9 +389,9 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2018
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 7]
+Fossati, et al.         Expires September 9, 2019               [Page 7]
 
-Internet-Draft      Multipart Content-Format for CoAP        August 2018
+Internet-Draft      Multipart Content-Format for CoAP         March 2019
 
 
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
@@ -445,4 +445,4 @@ Authors' Addresses
 
 
 
-Fossati, et al.         Expires February 8, 2019                [Page 8]
+Fossati, et al.         Expires September 9, 2019               [Page 8]
