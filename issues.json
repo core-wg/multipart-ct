@@ -34,17 +34,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 14,
+    "comments": 16,
     "created_at": "2019-03-07T16:48:00Z",
-    "updated_at": "2019-03-08T17:53:48Z",
-    "closed_at": null,
+    "updated_at": "2019-03-08T18:02:51Z",
+    "closed_at": "2019-03-08T18:00:41Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/23",
@@ -930,7 +930,7 @@
         "default": true
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -939,8 +939,8 @@
     "milestone": null,
     "comments": 4,
     "created_at": "2019-01-28T17:25:13Z",
-    "updated_at": "2019-03-07T17:07:29Z",
-    "closed_at": null,
+    "updated_at": "2019-03-08T18:00:42Z",
+    "closed_at": "2019-03-08T18:00:42Z",
     "author_association": "CONTRIBUTOR",
     "body": "Klaus:\r\n> There should be a sub-section or paragraph specifying what a\r\n> recipient of a application/multipart-core representation should do if\r\n> it encounters something that doesn't match the grammar. Does the whole\r\n> array become unusable when there is an unexpected element, or can a\r\n> recipient use the array up to the unexpected element? Should a\r\n> recipient try to do error recovery and skip to the next element? This\r\n> has impact on how the format can be evolved in the future.\r\n\r\nCarsten seems to prefer failing hard and early (draft-iab-protocol-maintenance).\r\n\r\nThomas loves simplicity and +1 Carsten's proposal."
   },
