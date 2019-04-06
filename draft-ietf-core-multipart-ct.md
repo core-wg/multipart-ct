@@ -18,7 +18,7 @@ abbrev: Multipart Content-Format for CoAP
 area: ART
 wg: CoRE
 kw: CoAP, Multipart Content-Format
-date: 2019-03-08
+# date: 2019-03-08
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
@@ -82,8 +82,9 @@ representations, which are distinguished by their Content-Format identifier,
 such as an audio snippet and a text representation accompanying it.
 In such a case, the sequence in which these occur may not be relevant
 to the application.
-This specification allows to indicate that an optional part is not
-present by substituting a null value for the representation of the part.
+This specification adds the option of
+substituting a null value for the representation of an optional part,
+which indicates that the part is not present.
 
 A third situation that is common only ever has a single representation
 in the sequence, which is one of a set of formats possible.  This kind
