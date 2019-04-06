@@ -108,7 +108,8 @@ A representation of media-type application/multipart-core contains a collection 
 zero or more representations, each along with their respective content
 format.
 
-The collection is encoded as a CBOR {{-cbor}} array with an even
+Employing the Concise Binary Object Representation (CBOR) {{-cbor}},
+the collection is encoded as a CBOR array with an even
 number of elements.
 The second, fourth, sixth, etc. element is a byte string containing
 a representation, or the value `null` if an optional part is indicated
@@ -145,13 +146,14 @@ all except if some streaming processing has already happened.)
 When a client registers to observe a resource {{-observe}} for which no
 representation is available yet, the server may send one or more 2.05
 (Content) notifications before sending the first actual 2.05
-(Content) or 2.03 (Valid) notification.  The possible resulting
-sequence of notifications is shown in Figure 1.
+(Content) or 2.03 (Valid) notification.  A diagram depicting possible
+resulting sequences of notifications, identified by their respective
+response code, is shown in {{fig-sequence}}.
 
           __________       __________       __________
          |          |     |          |     |          |
     ---->|   2.05   |---->|  2.05 /  |---->|  4.xx /  |
-         | Pending  |     |   2.03   |     |   5.xx   |
+         |  Pending |     |   2.03   |     |   5.xx   |
          |__________|     |__________|     |__________|
             ^   \ \          ^    \           ^
              \__/  \          \___/          /
