@@ -417,7 +417,7 @@ ul.toc li {
 <a href="#rfc.section.2">2.</a> <a href="#multipart-content-format-encoding" id="multipart-content-format-encoding">Multipart Content-Format Encoding</a>
 </h1>
 <p id="rfc.section.2.p.1">A representation of media-type application/multipart-core contains a collection of zero or more representations, each along with their respective content format.</p>
-<p id="rfc.section.2.p.2">The collection is encoded as a CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.</p>
+<p id="rfc.section.2.p.2">Employing the Concise Binary Object Representation (CBOR) <a href="#RFC7049" class="xref">[RFC7049]</a>, the collection is encoded as a CBOR array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.</p>
 <p id="rfc.section.2.p.3">For example, a collection containing two representations, one with content format ID 42 and one with content format ID 0, looks like this in CBOR diagnostic notation:</p>
 <p></p>
 
@@ -437,14 +437,14 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <h1 id="rfc.section.3.1">
 <a href="#rfc.section.3.1">3.1.</a> <a href="#observing-resources" id="observing-resources">Observing Resources</a>
 </h1>
-<p id="rfc.section.3.1.p.1">When a client registers to observe a resource <a href="#RFC7641" class="xref">[RFC7641]</a> for which no representation is available yet, the server may send one or more 2.05 (Content) notifications before sending the first actual 2.05 (Content) or 2.03 (Valid) notification.  The possible resulting sequence of notifications is shown in Figure 1.</p>
+<p id="rfc.section.3.1.p.1">When a client registers to observe a resource <a href="#RFC7641" class="xref">[RFC7641]</a> for which no representation is available yet, the server may send one or more 2.05 (Content) notifications before sending the first actual 2.05 (Content) or 2.03 (Valid) notification.  A diagram depicting possible resulting sequences of notifications, identified by their respective response code, is shown in <a href="#fig-sequence" class="xref">Figure 2</a>.</p>
 <div id="rfc.figure.2"></div>
 <div id="fig-sequence"></div>
 <pre>
       __________       __________       __________
      |          |     |          |     |          |
 ----&gt;|   2.05   |----&gt;|  2.05 /  |----&gt;|  4.xx /  |
-     | Pending  |     |   2.03   |     |   5.xx   |
+     |  Pending |     |   2.03   |     |   5.xx   |
      |__________|     |__________|     |__________|
         ^   \ \          ^    \           ^
          \__/  \          \___/          /

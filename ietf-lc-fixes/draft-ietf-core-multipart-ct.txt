@@ -140,12 +140,13 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    collection of zero or more representations, each along with their
    respective content format.
 
-   The collection is encoded as a CBOR [RFC7049] array with an even
-   number of elements.  The second, fourth, sixth, etc. element is a
-   byte string containing a representation, or the value "null" if an
-   optional part is indicated as not given.  The first, third, fifth,
-   etc. element is an unsigned integer specifying the content format ID
-   of the representation following it.
+   Employing the Concise Binary Object Representation (CBOR) [RFC7049],
+   the collection is encoded as a CBOR array with an even number of
+   elements.  The second, fourth, sixth, etc. element is a byte string
+   containing a representation, or the value "null" if an optional part
+   is indicated as not given.  The first, third, fifth, etc. element is
+   an unsigned integer specifying the content format ID of the
+   representation following it.
 
    For example, a collection containing two representations, one with
    content format ID 42 and one with content format ID 0, looks like
@@ -161,7 +162,6 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    multipart-part = (type: uint .size 2, part: bytes / null)
 
                Figure 1: CDDL for application/multipart-core
-
 
 
 
@@ -184,13 +184,14 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    When a client registers to observe a resource [RFC7641] for which no
    representation is available yet, the server may send one or more 2.05
    (Content) notifications before sending the first actual 2.05
-   (Content) or 2.03 (Valid) notification.  The possible resulting
-   sequence of notifications is shown in Figure 1.
+   (Content) or 2.03 (Valid) notification.  A diagram depicting possible
+   resulting sequences of notifications, identified by their respective
+   response code, is shown in Figure 2.
 
          __________       __________       __________
         |          |     |          |     |          |
    ---->|   2.05   |---->|  2.05 /  |---->|  4.xx /  |
-        | Pending  |     |   2.03   |     |   5.xx   |
+        |  Pending |     |   2.03   |     |   5.xx   |
         |__________|     |__________|     |__________|
            ^   \ \          ^    \           ^
             \__/  \          \___/          /
@@ -217,7 +218,6 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    An application/multipart-core representation carrying a single
    representation is represented by a two-element CBOR array, which is
    serialized as 0x82 followed by the two elements.  The first element
-   is an unsigned integer for the Content-Format value, which is
 
 
 
@@ -226,6 +226,7 @@ Fossati, et al.          Expires October 8, 2019                [Page 4]
 Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
+   is an unsigned integer for the Content-Format value, which is
    represented as described in Table 1.  The second element is the
    object as a byte string, which is represented as a length as
    described in Table 2 followed by the bytes of the object.
@@ -273,7 +274,6 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    IANA is requested to register the following media type [RFC6838]:
 
    Type name:  application
-
 
 
 
