@@ -168,7 +168,7 @@ case marked as "Pending" in {{fig-sequence}}, and carrying a single
 representation specified as the target content-format in the case in
 the middle of the figure.
 
-# Implementation hints
+# Implementation Hints
 
 This section describes the serialization for readers that may be new
 to CBOR.  It does not contain any new information.
