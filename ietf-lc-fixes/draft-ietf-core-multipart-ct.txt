@@ -5,10 +5,10 @@
 CoRE                                                          T. Fossati
 Internet-Draft                                                       ARM
 Intended status: Standards Track                               K. Hartke
-Expires: October 8, 2019                                        Ericsson
+Expires: October 26, 2019                                       Ericsson
                                                               C. Bormann
                                                  Universitaet Bremen TZI
-                                                          April 06, 2019
+                                                          April 24, 2019
 
 
                    Multipart Content-Format for CoAP
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 8, 2019.
+   This Internet-Draft will expire on October 26, 2019.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Fossati, et al.          Expires October 8, 2019                [Page 1]
+Fossati, et al.         Expires October 26, 2019                [Page 1]
 
 Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
@@ -69,15 +69,15 @@ Table of Contents
    2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
    3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   4
-   4.  Implementation hints  . . . . . . . . . . . . . . . . . . . .   4
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
-     5.1.  Registration of media type application/multipart-core . .   5
+   4.  Implementation Hints  . . . . . . . . . . . . . . . . . . . .   4
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+     5.1.  Registration of media type application/multipart-core . .   6
      5.2.  Registration of a Content-Format identifier for
            application/multipart-core  . . . . . . . . . . . . . . .   7
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
    Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   8
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
@@ -109,16 +109,16 @@ Table of Contents
 
 
 
-Fossati, et al.          Expires October 8, 2019                [Page 2]
+Fossati, et al.         Expires October 26, 2019                [Page 2]
 
 Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
    A third situation that is common only ever has a single
-   representation in the sequence, which is one of a set of formats
-   possible.  This kind of union of formats may also make the presence
-   of the actual representation optional, the omission of which leads to
-   a zero-length array.
+   representation in the sequence, which selects one of a set of formats
+   possible for this situation.  This kind of union of formats may also
+   make the presence of the actual representation optional, the omission
+   of which leads to a zero-length array.
 
    Where these rules are not sufficient for an application, it might
    still use the general format defined here, but register a new media
@@ -165,7 +165,7 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.          Expires October 8, 2019                [Page 3]
+Fossati, et al.         Expires October 26, 2019                [Page 3]
 
 Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
@@ -206,7 +206,7 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    "Pending" in Figure 2, and carrying a single representation specified
    as the target content-format in the case in the middle of the figure.
 
-4.  Implementation hints
+4.  Implementation Hints
 
    This section describes the serialization for readers that may be new
    to CBOR.  It does not contain any new information.
@@ -221,7 +221,7 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.          Expires October 8, 2019                [Page 4]
+Fossati, et al.         Expires October 26, 2019                [Page 4]
 
 Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
@@ -267,6 +267,21 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    (0x84 for two representations, 0x86 for three, ...) and the sequences
    of content-format and embedded representations follow.
 
+   For instance, the example from Section 2 would be serialized as:
+
+      0x84 (*) 0x182A 0x48 0x0123456789ABCDEF (+) 0x00 0x45 0x3031323334
+
+   where (*) marks the start of the information about the first
+   representation (content-format 42, byte string length 8) and, (+), of
+   the second representation (content-format 0, byte string length 5).
+
+
+
+Fossati, et al.         Expires October 26, 2019                [Page 5]
+
+Internet-Draft      Multipart Content-Format for CoAP         April 2019
+
+
 5.  IANA Considerations
 
 5.1.  Registration of media type application/multipart-core
@@ -274,13 +289,6 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    IANA is requested to register the following media type [RFC6838]:
 
    Type name:  application
-
-
-
-Fossati, et al.          Expires October 8, 2019                [Page 5]
-
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
-
 
    Subtype name:  multipart-core
 
@@ -322,6 +330,14 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
    Intended usage:  COMMON
 
+
+
+
+Fossati, et al.         Expires October 26, 2019                [Page 6]
+
+Internet-Draft      Multipart Content-Format for CoAP         April 2019
+
+
    Restrictions on usage:  N/A
 
    Author:  CoRE WG
@@ -329,14 +345,6 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
    Change controller:  IESG
 
    Provisional registration? (standards tree only):  no
-
-
-
-
-Fossati, et al.          Expires October 8, 2019                [Page 6]
-
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
-
 
 5.2.  Registration of a Content-Format identifier for application/
       multipart-core
@@ -377,22 +385,20 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
               DOI 10.17487/RFC7252, June 2014,
               <https://www.rfc-editor.org/info/rfc7252>.
 
+
+
+
+
+Fossati, et al.         Expires October 26, 2019                [Page 7]
+
+Internet-Draft      Multipart Content-Format for CoAP         April 2019
+
+
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
 7.2.  Informative References
-
-
-
-
-
-
-
-Fossati, et al.          Expires October 8, 2019                [Page 7]
-
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
-
 
    [I-D.ietf-ace-coap-est]
               Stok, P., Kampanakis, P., Richardson, M., and S. Raza,
@@ -431,6 +437,19 @@ Authors' Addresses
    Email: thomas.fossati@arm.com
 
 
+
+
+
+
+
+
+
+
+Fossati, et al.         Expires October 26, 2019                [Page 8]
+
+Internet-Draft      Multipart Content-Format for CoAP         April 2019
+
+
    Klaus Hartke
    Ericsson
    Torshamnsgatan 23
@@ -438,16 +457,6 @@ Authors' Addresses
    Sweden
 
    Email: klaus.hartke@ericsson.com
-
-
-
-
-
-
-
-Fossati, et al.          Expires October 8, 2019                [Page 8]
-
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
    Carsten Bormann
@@ -492,13 +501,4 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-
-
-
-
-
-
-
-
-
-Fossati, et al.          Expires October 8, 2019                [Page 9]
+Fossati, et al.         Expires October 26, 2019                [Page 9]
