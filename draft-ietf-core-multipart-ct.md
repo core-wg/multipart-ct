@@ -102,7 +102,7 @@ application/multipart-core.
 
 {::boilerplate bcp14}
 
-# Multipart Content-Format Encoding
+# Multipart Content-Format Encoding {#encoding}
 
 A representation of media-type application/multipart-core contains a collection of
 zero or more representations, each along with their respective content
@@ -212,6 +212,15 @@ For more than one representation included in an
 application/multipart-core representation, the head of the CBOR array
 is adjusted (0x84 for two representations, 0x86 for three, ...) and
 the sequences of content-format and embedded representations follow.
+
+For instance, the example from {{encoding}} would be serialized as:
+
+> 0x84 (*) 0x182A 0x48 0x0123456789ABCDEF (+) 0x00 0x45 0x3031323334
+
+where (*) marks the start of the information about the first
+representation (content-format 42, byte string length 8) and, (+), of
+the second representation (content-format 0, byte string length 5).
+
 
 # IANA Considerations {#IANA}
 
