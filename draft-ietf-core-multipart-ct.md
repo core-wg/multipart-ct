@@ -87,7 +87,8 @@ substituting a null value for the representation of an optional part,
 which indicates that the part is not present.
 
 A third situation that is common only ever has a single representation
-in the sequence, which is one of a set of formats possible.  This kind
+in the sequence, which selects one of a set of formats possible for
+this situation.  This kind
 of union of formats may also make the presence of the actual
 representation optional, the omission of which leads to a zero-length
 array.
