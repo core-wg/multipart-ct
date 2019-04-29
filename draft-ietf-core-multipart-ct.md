@@ -203,7 +203,7 @@ followed by the bytes of the object.
 For example, a single text/plain object (content-format 0) of value
 "Hello World" (11 characters) would be serialized as
 
-> 0x82 0x00 0x4b H e l l o 0x20 w o r l d
+> 0x82 0x00 0x4b H e l l o 0x20 W o r l d
 
 In effect, the serialization for a single object is done by prefixing
 the object with information that there is one object (here: 0x82),
