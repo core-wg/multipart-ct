@@ -414,7 +414,7 @@ ul.toc li {
 <a href="#rfc.section.2">2.</a> <a href="#encoding" id="encoding">Multipart Content-Format Encoding</a>
 </h1>
 <p id="rfc.section.2.p.1">A representation of media-type application/multipart-core contains a collection of zero or more representations, each along with their respective content format.</p>
-<p id="rfc.section.2.p.2">Employing the Concise Binary Object Representation (CBOR) <a href="#RFC7049" class="xref">[RFC7049]</a>, the collection is encoded as a CBOR array with an even number of elements.  The second, fourth, sixth, etc. element is a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The first, third, fifth, etc. element is an unsigned integer specifying the content format ID of the representation following it.</p>
+<p id="rfc.section.2.p.2">Employing the Concise Binary Object Representation (CBOR) <a href="#RFC7049" class="xref">[RFC7049]</a>, the collection is encoded as a CBOR array with an even number of elements.  Counting from zero, the odd-numbered elements are a byte string containing a representation, or the value <samp>null</samp> if an optional part is indicated as not given.  The (even-numbered) element preceding each of these is an unsigned integer specifying the content format ID of the representation following it.</p>
 <p id="rfc.section.2.p.3">For example, a collection containing two representations, one with content format ID 42 and one with content format ID 0, looks like this in CBOR diagnostic notation:</p>
 <p></p>
 
