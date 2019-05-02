@@ -67,8 +67,7 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
      1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   3
    2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
-   3.  Usage Examples  . . . . . . . . . . . . . . . . . . . . . . .   4
-     3.1.  Observing Resources . . . . . . . . . . . . . . . . . . .   4
+   3.  Usage Example: Observing Resources  . . . . . . . . . . . . .   4
    4.  Implementation Hints  . . . . . . . . . . . . . . . . . . . .   4
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
      5.1.  Registration of media type application/multipart-core . .   6
@@ -105,6 +104,7 @@ Table of Contents
    may not be relevant to the application.  This specification adds the
    option of substituting a null value for the representation of an
    optional part, which indicates that the part is not present.
+
 
 
 
@@ -177,11 +177,13 @@ Internet-Draft      Multipart Content-Format for CoAP           May 2019
    generally means the representation is not processed at all except if
    some streaming processing has already happened.)
 
-3.  Usage Examples
+3.  Usage Example: Observing Resources
 
-3.1.  Observing Resources
+   This section illustrates one less obvious example for using
+   application/multipart-core: combining it with observing a resource
+   [RFC7641] to handle pending results.
 
-   When a client registers to observe a resource [RFC7641] for which no
+   When a client registers to observe a resource for which no
    representation is available yet, the server may send one or more 2.05
    (Content) notifications before sending the first actual 2.05
    (Content) or 2.03 (Valid) notification.  A diagram depicting possible
@@ -215,9 +217,7 @@ Internet-Draft      Multipart Content-Format for CoAP           May 2019
    representations is represented by an empty CBOR array, which is
    serialized as a single byte with the value 0x80.
 
-   An application/multipart-core representation carrying a single
-   representation is represented by a two-element CBOR array, which is
-   serialized as 0x82 followed by the two elements.  The first element
+
 
 
 
@@ -226,6 +226,9 @@ Fossati, et al.         Expires November 3, 2019                [Page 4]
 Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
+   An application/multipart-core representation carrying a single
+   representation is represented by a two-element CBOR array, which is
+   serialized as 0x82 followed by the two elements.  The first element
    is an unsigned integer for the Content-Format value, which is
    represented as described in Table 1.  The second element is the
    object as a byte string, which is represented as a length as
@@ -271,9 +274,6 @@ Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
       0x84 (*) 0x182A 0x48 0x0123456789ABCDEF (+) 0x00 0x45 0x3031323334
 
-   where (*) marks the start of the information about the first
-   representation (content-format 42, byte string length 8) and, (+), of
-   the second representation (content-format 0, byte string length 5).
 
 
 
@@ -281,6 +281,10 @@ Fossati, et al.         Expires November 3, 2019                [Page 5]
 
 Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
+
+   where (*) marks the start of the information about the first
+   representation (content-format 42, byte string length 8) and, (+), of
+   the second representation (content-format 0, byte string length 5).
 
 5.  IANA Considerations
 
@@ -326,10 +330,6 @@ Internet-Draft      Multipart Content-Format for CoAP           May 2019
       Macintosh file type code(s):  N/A
 
    Person & email address to contact for further information:
-      iesg&ietf.org
-
-   Intended usage:  COMMON
-
 
 
 
@@ -337,6 +337,10 @@ Fossati, et al.         Expires November 3, 2019                [Page 6]
 
 Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
+
+      iesg&ietf.org
+
+   Intended usage:  COMMON
 
    Restrictions on usage:  N/A
 
@@ -380,10 +384,6 @@ Internet-Draft      Multipart Content-Format for CoAP           May 2019
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
 
-   [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
-              Application Protocol (CoAP)", RFC 7252,
-              DOI 10.17487/RFC7252, June 2014,
-              <https://www.rfc-editor.org/info/rfc7252>.
 
 
 
@@ -393,6 +393,11 @@ Fossati, et al.         Expires November 3, 2019                [Page 7]
 
 Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
+
+   [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
+              Application Protocol (CoAP)", RFC 7252,
+              DOI 10.17487/RFC7252, June 2014,
+              <https://www.rfc-editor.org/info/rfc7252>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -435,11 +440,6 @@ Authors' Addresses
    ARM
 
    Email: thomas.fossati@arm.com
-
-
-
-
-
 
 
 
