@@ -5,10 +5,10 @@
 CoRE                                                          T. Fossati
 Internet-Draft                                                       ARM
 Intended status: Standards Track                               K. Hartke
-Expires: October 31, 2019                                       Ericsson
+Expires: November 3, 2019                                       Ericsson
                                                               C. Bormann
                                                  Universitaet Bremen TZI
-                                                          April 29, 2019
+                                                            May 02, 2019
 
 
                    Multipart Content-Format for CoAP
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 31, 2019.
+   This Internet-Draft will expire on November 3, 2019.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 1]
+Fossati, et al.         Expires November 3, 2019                [Page 1]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 2]
+Fossati, et al.         Expires November 3, 2019                [Page 2]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    A third situation that is common only ever has a single
@@ -165,9 +165,9 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 3]
+Fossati, et al.         Expires November 3, 2019                [Page 3]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    This format is intended as a strict specification: An implementation
@@ -197,7 +197,7 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
             \__/  \          \___/          /
                    \_______________________/
 
-                   Figure 2: Sequence of Notifications:
+                    Figure 2: Sequence of Notifications
 
    The specification of the Observe option requires that all
    notifications carry the same Content-Format.  The application/
@@ -221,9 +221,9 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 4]
+Fossati, et al.         Expires November 3, 2019                [Page 4]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    is an unsigned integer for the Content-Format value, which is
@@ -277,9 +277,9 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 5]
+Fossati, et al.         Expires November 3, 2019                [Page 5]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
 5.  IANA Considerations
@@ -333,9 +333,9 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 6]
+Fossati, et al.         Expires November 3, 2019                [Page 6]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    Restrictions on usage:  N/A
@@ -389,9 +389,9 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 7]
+Fossati, et al.         Expires November 3, 2019                [Page 7]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
@@ -445,9 +445,9 @@ Authors' Addresses
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 8]
+Fossati, et al.         Expires November 3, 2019                [Page 8]
 
-Internet-Draft      Multipart Content-Format for CoAP         April 2019
+Internet-Draft      Multipart Content-Format for CoAP           May 2019
 
 
    Klaus Hartke
@@ -501,4 +501,4 @@ Internet-Draft      Multipart Content-Format for CoAP         April 2019
 
 
 
-Fossati, et al.         Expires October 31, 2019                [Page 9]
+Fossati, et al.         Expires November 3, 2019                [Page 9]
