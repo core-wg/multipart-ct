@@ -159,7 +159,7 @@ response code, is shown in {{fig-sequence}}.
             ^   \ \          ^    \           ^
              \__/  \          \___/          /
                     \_______________________/
-{: #fig-sequence title="Sequence of Notifications:"}
+{: #fig-sequence title="Sequence of Notifications"}
 
 The specification of the Observe option requires that all
 notifications carry the same Content-Format.  The
