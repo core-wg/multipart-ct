@@ -79,7 +79,8 @@ of MIME specifications {{-mime-types}}.  However, while those needed
 to focus on the syntactic aspects of integrating multiple
 representations into one e-mail, protocols providing full data
 transparency such as CoAP as well as readily available encoding
-formats such as CBOR {{-cbor}} shift the focus towards the intended
+formats such as the Concise Binary Object Representation (CBOR)
+{{-cbor}} shift the focus towards the intended
 use of the representations combined.  In this respect, the basic
 intent of the application/multipart-core media type is like that of
 multipart/mixed (Section 5.1.3 of {{-mime-types}}).  Specifically:
@@ -128,8 +129,7 @@ A representation of media-type application/multipart-core contains a collection 
 zero or more representations, each along with their respective content
 format.
 
-Employing the Concise Binary Object Representation (CBOR) {{-cbor}},
-the collection is encoded as a CBOR array with an even
+The collection is encoded as a CBOR {{-cbor}} array with an even
 number of elements.
 Counting from zero, the odd-numbered elements are a byte string containing
 a representation, or the value `null` if an optional part is indicated
