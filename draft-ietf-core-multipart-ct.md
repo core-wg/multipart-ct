@@ -18,7 +18,7 @@ abbrev: Multipart Content-Format for CoAP
 area: ART
 wg: CoRE
 kw: CoAP, Multipart Content-Format
-# date: 2019-03-08
+# date: 2019-08-19
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
