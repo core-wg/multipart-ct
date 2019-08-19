@@ -81,7 +81,7 @@ representations into one e-mail, protocols providing full data
 transparency such as CoAP as well as readily available encoding
 formats such as the Concise Binary Object Representation (CBOR)
 {{-cbor}} shift the focus towards the intended
-use of the representations combined.  In this respect, the basic
+use of the combined representations.  In this respect, the basic
 intent of the application/multipart-core media type is like that of
 multipart/mixed (Section 5.1.3 of {{-mime-types}}).  Specifically:
 
