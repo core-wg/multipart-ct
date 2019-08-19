@@ -47,6 +47,7 @@ normative:
   RFC7049: cbor
   RFC7252: coap
 informative:
+  RFC2046: mime-types
   RFC7641: observe
   I-D.ietf-ace-coap-est: est-coap
   I-D.ietf-cbor-cddl: cddl
@@ -72,10 +73,21 @@ This simple and efficient binary framing mechanism can be employed to
 create application specific request and response bodies which build on
 multiple already existing media types.
 
+As the name of the media-type suggests, it is inspired by the
+multipart media types that started to be defined with the original set
+of MIME specifications {{-mime-types}}.  However, while those needed
+to focus on the syntactic aspects of integrating multiple
+representations into one e-mail, protocols providing full data
+transparency such as CoAP as well as readily available encoding
+formats such as CBOR {{-cbor}} shift the focus towards the intended
+use of the representations combined.  In this respect, the basic
+intent of the application/multipart-core media type is like that of
+multipart/mixed (Section 5.1.3 of {{-mime-types}}).  Specifically:
+
 The individual representations in an application/multipart-core body
 occur in a sequence, which may be employed by an application where
 such a sequence is natural, e.g. for a number of audio snippets in
-different formats to be played out in that sequence.
+various formats to be played out in that sequence.
 
 In other cases, an application may be more interested in a bag of
 representations, which are distinguished by their Content-Format identifier,
@@ -87,17 +99,24 @@ substituting a null value for the representation of an optional part,
 which indicates that the part is not present.
 
 A third situation that is common only ever has a single representation
-in the sequence, which selects one of a set of formats possible for
-this situation.  This kind
-of union of formats may also make the presence of the actual
-representation optional, the omission of which leads to a zero-length
-array.
+in the sequence, where the sender selects just one of a set of formats
+possible for this situation.  This kind of union type of formats may
+also make the presence of the actual representation optional, the
+omission of which leads to a zero-length array.
 
 Where these rules are not sufficient for an application, it might
 still use the general format defined here, but register a new media
 type and an associated Content-Format identifier to associate the
 representation with these more specific semantics instead of using
-application/multipart-core.
+the application/multipart-core media type.
+
+Also, future specifications might want to define rough equivalents for
+other multipart media types with specific semantics not covered by the
+present specification, such as multipart/alternative (Section 5.1.4 of
+{{-mime-types}}), where several alternative representations are
+provided in the message, but only one of those is to be selected by
+the recipient for its use (this is less likely to be useful in a
+constrained environment with facilities for pre-flight discovery).
 
 ## Requirements Language
 
