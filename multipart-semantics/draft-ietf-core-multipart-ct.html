@@ -297,12 +297,12 @@ ul.toc li {
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.22.3 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.24.0 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Fossati, T., Hartke, K., and C. Bormann" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-core-multipart-ct-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-05-02" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-08-19" />
   <meta name="dct.abstract" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier." />
   <meta name="description" content="This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier." />
 
@@ -326,7 +326,7 @@ ul.toc li {
 <td class="right">K. Hartke</td>
 </tr>
 <tr>
-<td class="left">Expires: November 3, 2019</td>
+<td class="left">Expires: February 20, 2020</td>
 <td class="right">Ericsson</td>
 </tr>
 <tr>
@@ -339,7 +339,7 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">May 02, 2019</td>
+<td class="right">August 19, 2019</td>
 </tr>
 
     	
@@ -355,7 +355,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on November 3, 2019.</p>
+<p>This Internet-Draft will expire on February 20, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -402,10 +402,12 @@ ul.toc li {
 </h1>
 <p id="rfc.section.1.p.1">This memo defines application/multipart-core, an application-independent media-type that can be used to combine representations of zero or more different media types into a single message, such as a CoAP <a href="#RFC7252" class="xref">[RFC7252]</a> request or response body, with minimal framing overhead, each along with a CoAP Content-Format identifier.</p>
 <p id="rfc.section.1.p.2">This simple and efficient binary framing mechanism can be employed to create application specific request and response bodies which build on multiple already existing media types.</p>
-<p id="rfc.section.1.p.3">The individual representations in an application/multipart-core body occur in a sequence, which may be employed by an application where such a sequence is natural, e.g. for a number of audio snippets in different formats to be played out in that sequence.</p>
-<p id="rfc.section.1.p.4">In other cases, an application may be more interested in a bag of representations, which are distinguished by their Content-Format identifier, such as an audio snippet and a text representation accompanying it.  In such a case, the sequence in which these occur may not be relevant to the application.  This specification adds the option of substituting a null value for the representation of an optional part, which indicates that the part is not present.</p>
-<p id="rfc.section.1.p.5">A third situation that is common only ever has a single representation in the sequence, which selects one of a set of formats possible for this situation.  This kind of union of formats may also make the presence of the actual representation optional, the omission of which leads to a zero-length array.</p>
-<p id="rfc.section.1.p.6">Where these rules are not sufficient for an application, it might still use the general format defined here, but register a new media type and an associated Content-Format identifier to associate the representation with these more specific semantics instead of using application/multipart-core.</p>
+<p id="rfc.section.1.p.3">As the name of the media-type suggests, it is inspired by the multipart media types that started to be defined with the original set of MIME specifications <a href="#RFC2046" class="xref">[RFC2046]</a>.  However, while those needed to focus on the syntactic aspects of integrating multiple representations into one e-mail, protocols providing full data transparency such as CoAP as well as readily available encoding formats such as CBOR <a href="#RFC7049" class="xref">[RFC7049]</a> shift the focus towards the intended use of the representations combined.  In this respect, the basic intent of the application/multipart-core media type is like that of multipart/mixed (Section 5.1.3 of <a href="#RFC2046" class="xref">[RFC2046]</a>).  Specifically:</p>
+<p id="rfc.section.1.p.4">The individual representations in an application/multipart-core body occur in a sequence, which may be employed by an application where such a sequence is natural, e.g. for a number of audio snippets in various formats to be played out in that sequence.</p>
+<p id="rfc.section.1.p.5">In other cases, an application may be more interested in a bag of representations, which are distinguished by their Content-Format identifier, such as an audio snippet and a text representation accompanying it.  In such a case, the sequence in which these occur may not be relevant to the application.  This specification adds the option of substituting a null value for the representation of an optional part, which indicates that the part is not present.</p>
+<p id="rfc.section.1.p.6">A third situation that is common only ever has a single representation in the sequence, where the sender selects just one of a set of formats possible for this situation.  This kind of union type of formats may also make the presence of the actual representation optional, the omission of which leads to a zero-length array.</p>
+<p id="rfc.section.1.p.7">Where these rules are not sufficient for an application, it might still use the general format defined here, but register a new media type and an associated Content-Format identifier to associate the representation with these more specific semantics instead of using the application/multipart-core media type.</p>
+<p id="rfc.section.1.p.8">Also, future specifications might want to define rough equivalents for other multipart media types with specific semantics not covered by the present specification, such as multipart/alternative (Section 5.1.4 of <a href="#RFC2046" class="xref">[RFC2046]</a>), where several alternative representations are provided in the message, but only one of those is to be selected by the recipient for its use (this is less likely to be useful in a constrained environment with facilities for pre-flight discovery).</p>
 <h1 id="rfc.section.1.1">
 <a href="#rfc.section.1.1">1.1.</a> <a href="#requirements-language" id="requirements-language">Requirements Language</a>
 </h1>
@@ -630,12 +632,17 @@ multipart-part = (type: uint .size 2, part: bytes / null)
 <tr>
 <td class="reference"><b id="I-D.ietf-ace-coap-est">[I-D.ietf-ace-coap-est]</b></td>
 <td class="top">
-<a>Stok, P.</a>, <a>Kampanakis, P.</a>, <a>Richardson, M.</a> and <a>S. Raza</a>, "<a href="https://tools.ietf.org/html/draft-ietf-ace-coap-est-10">EST over secure CoAP (EST-coaps)</a>", Internet-Draft draft-ietf-ace-coap-est-10, March 2019.</td>
+<a>Stok, P.</a>, <a>Kampanakis, P.</a>, <a>Richardson, M.</a> and <a>S. Raza</a>, "<a href="https://tools.ietf.org/html/draft-ietf-ace-coap-est-12">EST over secure CoAP (EST-coaps)</a>", Internet-Draft draft-ietf-ace-coap-est-12, June 2019.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-cbor-cddl">[I-D.ietf-cbor-cddl]</b></td>
 <td class="top">
 <a>Birkholz, H.</a>, <a>Vigano, C.</a> and <a>C. Bormann</a>, "<a href="https://tools.ietf.org/html/draft-ietf-cbor-cddl-08">Concise data definition language (CDDL): a notational convention to express CBOR and JSON data structures</a>", Internet-Draft draft-ietf-cbor-cddl-08, March 2019.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC2046">[RFC2046]</b></td>
+<td class="top">
+<a>Freed, N.</a> and <a>N. Borenstein</a>, "<a href="https://tools.ietf.org/html/rfc2046">Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</a>", RFC 2046, DOI 10.17487/RFC2046, November 1996.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC6838">[RFC6838]</b></td>
