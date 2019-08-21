@@ -5,10 +5,10 @@
 CoRE                                                          T. Fossati
 Internet-Draft                                                       ARM
 Intended status: Standards Track                               K. Hartke
-Expires: February 20, 2020                                      Ericsson
+Expires: February 22, 2020                                      Ericsson
                                                               C. Bormann
                                                  Universitaet Bremen TZI
-                                                         August 19, 2019
+                                                         August 21, 2019
 
 
                    Multipart Content-Format for CoAP
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 20, 2020.
+   This Internet-Draft will expire on February 22, 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Fossati, et al.         Expires February 20, 2020               [Page 1]
+Fossati, et al.         Expires February 22, 2020               [Page 1]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -66,36 +66,62 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
      1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   3
-   2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   3
+   2.  Multipart Content-Format Encoding . . . . . . . . . . . . . .   4
    3.  Usage Example: Observing Resources  . . . . . . . . . . . . .   4
-   4.  Implementation Hints  . . . . . . . . . . . . . . . . . . . .   4
+   4.  Implementation Hints  . . . . . . . . . . . . . . . . . . . .   5
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
      5.1.  Registration of media type application/multipart-core . .   6
      5.2.  Registration of a Content-Format identifier for
            application/multipart-core  . . . . . . . . . . . . . . .   7
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   8
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   9
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
 
    This memo defines application/multipart-core, an application-
    independent media-type that can be used to combine representations of
-   zero or more different media types into a single message, such as a
-   CoAP [RFC7252] request or response body, with minimal framing
-   overhead, each along with a CoAP Content-Format identifier.
+   zero or more different media types, each along with a CoAP Content-
+   Format identifier, into a single representation, with minimal framing
+   overhead.  This combined representation may then be carried in a
+   single message, such as a CoAP [RFC7252] request or response body.
 
    This simple and efficient binary framing mechanism can be employed to
    create application specific request and response bodies which build
    on multiple already existing media types.
 
+   As the name of the media-type suggests, it is inspired by the
+   multipart media types that started to be defined with the original
+   set of MIME specifications [RFC2046].  However, while those needed to
+   focus on the syntactic aspects of integrating multiple
+   representations into one e-mail, transfer protocols providing full
+   data transparency such as CoAP as well as readily available encoding
+   formats such as the Concise Binary Object Representation (CBOR)
+   [RFC7049] shift the focus towards the intended use of the combined
+   representations.  In this respect, the basic intent of the
+   application/multipart-core media type is like that of multipart/mixed
+   (Section 5.1.3 of [RFC2046]).  The detailed semantics of the
+   representations are refined by the context established by the
+   application in the accompanying request parameters, e.g., the
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 2]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
+
+   resource URI and any further options (header fields), but three usage
+   scenarios are envisioned:
+
    The individual representations in an application/multipart-core body
    occur in a sequence, which may be employed by an application where
    such a sequence is natural, e.g. for a number of audio snippets in
-   different formats to be played out in that sequence.
+   various formats to be played out in that sequence, or search results
+   returned in order of relevance.
 
    In other cases, an application may be more interested in a bag of
    representations, which are distinguished by their Content-Format
@@ -105,26 +131,27 @@ Table of Contents
    option of substituting a null value for the representation of an
    optional part, which indicates that the part is not present.
 
-
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 2]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
-
    A third situation that is common only ever has a single
-   representation in the sequence, which selects one of a set of formats
-   possible for this situation.  This kind of union of formats may also
-   make the presence of the actual representation optional, the omission
-   of which leads to a zero-length array.
+   representation in the sequence, where the sender already selects just
+   one of a set of formats possible for this situation.  This kind of
+   union "type" of formats may also make the presence of the actual
+   representation optional, the omission of which leads to a zero-length
+   array.
 
    Where these rules are not sufficient for an application, it might
    still use the general format defined here, but register a new media
    type and an associated Content-Format identifier to associate the
    representation with these more specific semantics instead of using
-   application/multipart-core.
+   the application/multipart-core media type.
+
+   Also, future specifications might want to define rough equivalents
+   for other multipart media types with specific semantics not covered
+   by the present specification, such as multipart/alternative
+   (Section 5.1.4 of [RFC2046]), where several alternative
+   representations are provided in the message, but only one of those is
+   to be selected by the recipient for its use (this is less likely to
+   be useful in a constrained environment that has facilities for pre-
+   flight discovery).
 
 1.1.  Requirements Language
 
@@ -134,19 +161,27 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 3]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
+
 2.  Multipart Content-Format Encoding
 
    A representation of media-type application/multipart-core contains a
    collection of zero or more representations, each along with their
    respective content format.
 
-   Employing the Concise Binary Object Representation (CBOR) [RFC7049],
-   the collection is encoded as a CBOR array with an even number of
-   elements.  Counting from zero, the odd-numbered elements are a byte
-   string containing a representation, or the value "null" if an
-   optional part is indicated as not given.  The (even-numbered) element
-   preceding each of these is an unsigned integer specifying the content
-   format ID of the representation following it.
+   The collection is encoded as a CBOR [RFC7049] array with an even
+   number of elements.  Counting from zero, the odd-numbered elements
+   are a byte string containing a representation, or the value "null" if
+   an optional part is indicated as not given.  The (even-numbered)
+   element preceding each of these is an unsigned integer specifying the
+   content format ID of the representation following it.
 
    For example, a collection containing two representations, one with
    content format ID 42 and one with content format ID 0, looks like
@@ -155,20 +190,13 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
       [42, h'0123456789abcdef', 0, h'3031323334']
 
    For illustration, the structure of an application/multipart-core
-   representation can be described by the CDDL [I-D.ietf-cbor-cddl]
-   specification in Figure 1:
+   representation can be described by the CDDL [RFC8610] specification
+   in Figure 1:
 
    multipart-core = [* multipart-part]
    multipart-part = (type: uint .size 2, part: bytes / null)
 
                Figure 1: CDDL for application/multipart-core
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 3]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
 
    This format is intended as a strict specification: An implementation
    MUST stop processing the representation if there is a CBOR well-
@@ -189,6 +217,14 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
    (Content) or 2.03 (Valid) notification.  A diagram depicting possible
    resulting sequences of notifications, identified by their respective
    response code, is shown in Figure 2.
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 4]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
 
          __________       __________       __________
         |          |     |          |     |          |
@@ -217,15 +253,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
    representations is represented by an empty CBOR array, which is
    serialized as a single byte with the value 0x80.
 
-
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 4]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
-
    An application/multipart-core representation carrying a single
    representation is represented by a two-element CBOR array, which is
    serialized as 0x82 followed by the two elements.  The first element
@@ -243,6 +270,17 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
                       +----------------+------------+
 
                  Table 1: Serialization of content-format
+
+
+
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 5]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
 
             +-----------------------------+-------------------+
             | Serialization               | Length            |
@@ -274,14 +312,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
       0x84 (*) 0x182A 0x48 0x0123456789ABCDEF (+) 0x00 0x45 0x3031323334
 
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 5]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
-
    where (*) marks the start of the information about the first
    representation (content-format 42, byte string length 8) and, (+), of
    the second representation (content-format 0, byte string length 5).
@@ -299,6 +329,14 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
    Required parameters:  N/A
 
    Optional parameters:  N/A
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 6]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
 
    Encoding considerations:  binary
 
@@ -330,14 +368,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
       Macintosh file type code(s):  N/A
 
    Person & email address to contact for further information:
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 6]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
-
       iesg&ietf.org
 
    Intended usage:  COMMON
@@ -355,6 +385,15 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
    IANA is requested to register the following Content-Format to the
    "CoAP Content-Formats" subregistry, within the "Constrained RESTful
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 7]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
+
    Environments (CoRE) Parameters" registry, from the Expert Review
    space (0..255):
 
@@ -384,16 +423,6 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
 
-
-
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 7]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
-
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014,
@@ -410,11 +439,21 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
               "EST over secure CoAP (EST-coaps)", draft-ietf-ace-coap-
               est-12 (work in progress), June 2019.
 
-   [I-D.ietf-cbor-cddl]
-              Birkholz, H., Vigano, C., and C. Bormann, "Concise data
-              definition language (CDDL): a notational convention to
-              express CBOR and JSON data structures", draft-ietf-cbor-
-              cddl-08 (work in progress), March 2019.
+
+
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 8]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
+
+
+   [RFC2046]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part Two: Media Types", RFC 2046,
+              DOI 10.17487/RFC2046, November 1996,
+              <https://www.rfc-editor.org/info/rfc2046>.
 
    [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
               Specifications and Registration Procedures", BCP 13,
@@ -425,6 +464,12 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
               Application Protocol (CoAP)", RFC 7641,
               DOI 10.17487/RFC7641, September 2015,
               <https://www.rfc-editor.org/info/rfc7641>.
+
+   [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
+              Definition Language (CDDL): A Notational Convention to
+              Express Concise Binary Object Representation (CBOR) and
+              JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
+              June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
 Acknowledgements
 
@@ -442,14 +487,6 @@ Authors' Addresses
    Email: thomas.fossati@arm.com
 
 
-
-
-
-Fossati, et al.         Expires February 20, 2020               [Page 8]
-
-Internet-Draft      Multipart Content-Format for CoAP        August 2019
-
-
    Klaus Hartke
    Ericsson
    Torshamnsgatan 23
@@ -457,6 +494,16 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
    Sweden
 
    Email: klaus.hartke@ericsson.com
+
+
+
+
+
+
+
+Fossati, et al.         Expires February 22, 2020               [Page 9]
+
+Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
    Carsten Bormann
@@ -501,4 +548,13 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 20, 2020               [Page 9]
+
+
+
+
+
+
+
+
+
+Fossati, et al.         Expires February 22, 2020              [Page 10]
