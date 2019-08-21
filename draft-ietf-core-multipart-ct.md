@@ -65,9 +65,11 @@ Content-Format identifier.
 # Introduction
 
 This memo defines application/multipart-core, an application-independent
-media-type that can be used to combine representations of zero or more different media types
-into a single message, such as a CoAP {{-coap}} request or response body, with minimal framing
-overhead, each along with a CoAP Content-Format identifier.
+media-type that can be used to combine representations of zero or more
+different media types, each along with a CoAP Content-Format
+identifier, into a single representation, with minimal framing overhead.
+This combined representation may then be carried in a single message,
+such as a CoAP {{-coap}} request or response body.
 
 This simple and efficient binary framing mechanism can be employed to
 create application specific request and response bodies which build on
@@ -77,7 +79,7 @@ As the name of the media-type suggests, it is inspired by the
 multipart media types that started to be defined with the original set
 of MIME specifications {{-mime-types}}.  However, while those needed
 to focus on the syntactic aspects of integrating multiple
-representations into one e-mail, protocols providing full data
+representations into one e-mail, transfer protocols providing full data
 transparency such as CoAP as well as readily available encoding
 formats such as the Concise Binary Object Representation (CBOR)
 {{-cbor}} shift the focus towards the intended
