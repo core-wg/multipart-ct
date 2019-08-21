@@ -18,7 +18,7 @@ abbrev: Multipart Content-Format for CoAP
 area: ART
 wg: CoRE
 kw: CoAP, Multipart Content-Format
-# date: 2019-08-19
+# date: 2019-08-21
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
@@ -50,7 +50,7 @@ informative:
   RFC2046: mime-types
   RFC7641: observe
   I-D.ietf-ace-coap-est: est-coap
-  I-D.ietf-cbor-cddl: cddl
+  RFC8610: cddl
 
 --- abstract
 
