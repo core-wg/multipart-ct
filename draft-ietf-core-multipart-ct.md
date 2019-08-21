@@ -85,12 +85,17 @@ formats such as the Concise Binary Object Representation (CBOR)
 {{-cbor}} shift the focus towards the intended
 use of the combined representations.  In this respect, the basic
 intent of the application/multipart-core media type is like that of
-multipart/mixed (Section 5.1.3 of {{-mime-types}}).  Specifically:
+multipart/mixed (Section 5.1.3 of {{-mime-types}}).  The detailed
+semantics of the representations are refined by the context
+established by the application in the accompanying request parameters,
+e.g., the resource URI and any further options (header fields), but
+three usage scenarios are envisioned:
 
 The individual representations in an application/multipart-core body
 occur in a sequence, which may be employed by an application where
 such a sequence is natural, e.g. for a number of audio snippets in
-various formats to be played out in that sequence.
+various formats to be played out in that sequence, or search results
+returned in order of relevance.
 
 In other cases, an application may be more interested in a bag of
 representations, which are distinguished by their Content-Format identifier,
@@ -102,8 +107,8 @@ substituting a null value for the representation of an optional part,
 which indicates that the part is not present.
 
 A third situation that is common only ever has a single representation
-in the sequence, where the sender selects just one of a set of formats
-possible for this situation.  This kind of union type of formats may
+in the sequence, where the sender already selects just one of a set of formats
+possible for this situation.  This kind of union "type" of formats may
 also make the presence of the actual representation optional, the
 omission of which leads to a zero-length array.
 
@@ -119,7 +124,7 @@ present specification, such as multipart/alternative (Section 5.1.4 of
 {{-mime-types}}), where several alternative representations are
 provided in the message, but only one of those is to be selected by
 the recipient for its use (this is less likely to be useful in a
-constrained environment with facilities for pre-flight discovery).
+constrained environment that has facilities for pre-flight discovery).
 
 ## Requirements Language
 
@@ -347,3 +352,6 @@ document is based on the requirements in {{-est-coap}}, based on
 discussions with Michael Richardson, Panos Kampanis and Peter van der
 Stok.
 
+
+<!--  LocalWords:  multipart
+ -->
