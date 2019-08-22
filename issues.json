@@ -1,6 +1,54 @@
 [
 
   {
+    "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/25",
+    "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
+    "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/25/labels{/name}",
+    "comments_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/25/comments",
+    "events_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/25/events",
+    "html_url": "https://github.com/core-wg/multipart-ct/issues/25",
+    "id": 483801982,
+    "node_id": "MDU6SXNzdWU0ODM4MDE5ODI=",
+    "number": 25,
+    "title": "Christer's editorial comments",
+    "user": {
+      "login": "thomas-fossati",
+      "id": 9195842,
+      "node_id": "MDQ6VXNlcjkxOTU4NDI=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9195842?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomas-fossati",
+      "html_url": "https://github.com/thomas-fossati",
+      "followers_url": "https://api.github.com/users/thomas-fossati/followers",
+      "following_url": "https://api.github.com/users/thomas-fossati/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomas-fossati/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomas-fossati/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomas-fossati/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomas-fossati/orgs",
+      "repos_url": "https://api.github.com/users/thomas-fossati/repos",
+      "events_url": "https://api.github.com/users/thomas-fossati/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomas-fossati/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2019-08-22T06:48:05Z",
+    "updated_at": "2019-08-22T06:48:05Z",
+    "closed_at": null,
+    "author_association": "CONTRIBUTOR",
+    "body": "(https://mailarchive.ietf.org/arch/msg/core/Yt_Un8MfppRi7hzJrVLiTJ1xcwQ)\r\n\r\n**Q1**\r\n \r\nThe Introduction says talks about “request or response body’.\r\n \r\nHowever, when looking in RFC 7252, I don’t find ‘body’ anywhere.\r\n \r\nI assume that ‘body’ refers to what RFC 7252 calls ‘payload’. If so, I suggest aligning the terminology.\r\n \r\n(For some reason section 10.2.3 of RFC 7252 does use ‘message-body’, without any explanation or reference, but I guess that is just an error)\r\n \r\n**Q2**\r\n \r\nRelated to Q1, the text says:\r\n \r\n   “can be used to combine representations of zero or more different media types into a single message”\r\n \r\nI assume it means ‘single message payload’? Because, you are not combing other parts (Codes, Tokens etc) of the message, are you?\r\n \r\nI think it would be more clear if you said ‘combine multiple representations, each using the same or different media types, into a single message payload’.\r\n \r\n**Q3**\r\n\r\nThe draft uses both ‘media type’ and ‘media-type’. RFC 7252 uses ‘media type’ (there is one instance of ‘media-type’, though), so maybe align with that?\r\n"
+  },
+  {
     "url": "https://api.github.com/repos/core-wg/multipart-ct/issues/24",
     "repository_url": "https://api.github.com/repos/core-wg/multipart-ct",
     "labels_url": "https://api.github.com/repos/core-wg/multipart-ct/issues/24/labels{/name}",
@@ -34,7 +82,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -43,8 +91,8 @@
     "milestone": null,
     "comments": 3,
     "created_at": "2019-08-19T16:24:51Z",
-    "updated_at": "2019-08-21T19:14:50Z",
-    "closed_at": null,
+    "updated_at": "2019-08-21T19:21:10Z",
+    "closed_at": "2019-08-21T19:21:10Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/core-wg/multipart-ct/pulls/24",
