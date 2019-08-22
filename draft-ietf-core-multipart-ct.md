@@ -55,7 +55,7 @@ informative:
 --- abstract
 
 This memo defines application/multipart-core, an
-application-independent media-type that can be used
+application-independent media type that can be used
 to combine representations of zero or more different media types into a single
 message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP
 Content-Format identifier.
@@ -65,7 +65,7 @@ Content-Format identifier.
 # Introduction
 
 This memo defines application/multipart-core, an application-independent
-media-type that can be used to combine representations of zero or more
+media type that can be used to combine representations of zero or more
 different media types, each along with a CoAP Content-Format
 identifier, into a single representation, with minimal framing overhead.
 This combined representation may then be carried in a single message,
@@ -75,7 +75,7 @@ This simple and efficient binary framing mechanism can be employed to
 create application specific request and response bodies which build on
 multiple already existing media types.
 
-As the name of the media-type suggests, it is inspired by the
+As the name of the media type suggests, it is inspired by the
 multipart media types that started to be defined with the original set
 of MIME specifications {{-mime-types}}.  However, while those needed
 to focus on the syntactic aspects of integrating multiple
@@ -132,7 +132,7 @@ constrained environment that has facilities for pre-flight discovery).
 
 # Multipart Content-Format Encoding {#encoding}
 
-A representation of media-type application/multipart-core contains a collection of
+A representation of media type application/multipart-core contains a collection of
 zero or more representations, each along with their respective content
 format.
 
