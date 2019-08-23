@@ -18,7 +18,7 @@ abbrev: Multipart Content-Format for CoAP
 area: ART
 wg: CoRE
 kw: CoAP, Multipart Content-Format
-# date: 2019-08-21
+# date: 2019-08-23
 author:
 - ins: T. F. Fossati
   name: Thomas Fossati
@@ -57,7 +57,7 @@ informative:
 This memo defines application/multipart-core, an
 application-independent media type that can be used
 to combine representations of zero or more different media types into a single
-message body, carried e.g., as a CoAP request or response payload, with minimal framing overhead, each along with a CoAP
+representation, with minimal framing overhead, each along with a CoAP
 Content-Format identifier.
 
 --- middle
@@ -67,9 +67,9 @@ Content-Format identifier.
 This memo defines application/multipart-core, an application-independent
 media type that can be used to combine representations of zero or more
 different media types, each along with a CoAP Content-Format
-identifier, into a single representation, with minimal framing overhead.
-This combined representation may then be carried in a single message body,
-such as a CoAP {{-coap}} request or response payload.
+identifier {{-coap}}, into a single representation, with minimal framing overhead.
+This combined representation may then be carried in a single message,
+for instance as the body or payload of a transfer protocol request or response.
 
 This simple and efficient binary framing mechanism can be employed to
 create application specific message bodies which build on
