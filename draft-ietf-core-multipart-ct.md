@@ -166,13 +166,13 @@ or any residual data left after processing the CBOR data item.
 (This generally means the representation is not processed at
 all except if some streaming processing has already happened.)
 
-# Usage Example: Observing Resources
+# Usage Example: CoAP Observing Resources
 
 This section illustrates one less obvious example for using
 application/multipart-core: combining it with observing a resource
 {{-observe}} to handle pending results.
 
-When a client registers to observe a resource for which no
+When a CoAP client registers to observe a resource for which no
 representation is available yet, the server may send one or more 2.05
 (Content) notifications before sending the first actual 2.05
 (Content) or 2.03 (Valid) notification.  A diagram depicting possible
