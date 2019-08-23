@@ -18,9 +18,9 @@ Abstract
 
    This memo defines application/multipart-core, an application-
    independent media type that can be used to combine representations of
-   zero or more different media types into a single message body,
-   carried e.g., as a CoAP request or response payload, with minimal
-   framing overhead, each along with a CoAP Content-Format identifier.
+   zero or more different media types into a single representation, with
+   minimal framing overhead, each along with a CoAP Content-Format
+   identifier.
 
 Status of This Memo
 
@@ -85,10 +85,10 @@ Table of Contents
    This memo defines application/multipart-core, an application-
    independent media type that can be used to combine representations of
    zero or more different media types, each along with a CoAP Content-
-   Format identifier, into a single representation, with minimal framing
-   overhead.  This combined representation may then be carried in a
-   single message body, such as a CoAP [RFC7252] request or response
-   payload.
+   Format identifier [RFC7252], into a single representation, with
+   minimal framing overhead.  This combined representation may then be
+   carried in a single message, for instance as the body or payload of a
+   transfer protocol request or response.
 
    This simple and efficient binary framing mechanism can be employed to
    create application specific message bodies which build on multiple
