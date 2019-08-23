@@ -5,10 +5,10 @@
 CoRE                                                          T. Fossati
 Internet-Draft                                                       ARM
 Intended status: Standards Track                               K. Hartke
-Expires: February 23, 2020                                      Ericsson
+Expires: February 24, 2020                                      Ericsson
                                                               C. Bormann
                                                  Universitaet Bremen TZI
-                                                         August 22, 2019
+                                                         August 23, 2019
 
 
                    Multipart Content-Format for CoAP
@@ -18,9 +18,9 @@ Abstract
 
    This memo defines application/multipart-core, an application-
    independent media type that can be used to combine representations of
-   zero or more different media types into a single message, such as a
-   CoAP request or response body, with minimal framing overhead, each
-   along with a CoAP Content-Format identifier.
+   zero or more different media types into a single message body,
+   carried e.g., as a CoAP request or response payload, with minimal
+   framing overhead, each along with a CoAP Content-Format identifier.
 
 Status of This Memo
 
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 23, 2020.
+   This Internet-Draft will expire on February 24, 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 1]
+Fossati, et al.         Expires February 24, 2020               [Page 1]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -87,11 +87,12 @@ Table of Contents
    zero or more different media types, each along with a CoAP Content-
    Format identifier, into a single representation, with minimal framing
    overhead.  This combined representation may then be carried in a
-   single message, such as a CoAP [RFC7252] request or response body.
+   single message body, such as a CoAP [RFC7252] request or response
+   payload.
 
    This simple and efficient binary framing mechanism can be employed to
-   create application specific request and response bodies which build
-   on multiple already existing media types.
+   create application specific message bodies which build on multiple
+   already existing media types.
 
    As the name of the media type suggests, it is inspired by the
    multipart media types that started to be defined with the original
@@ -105,23 +106,23 @@ Table of Contents
    application/multipart-core media type is like that of multipart/mixed
    (Section 5.1.3 of [RFC2046]).  The detailed semantics of the
    representations are refined by the context established by the
-   application in the accompanying request parameters, e.g., the
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 2]
+Fossati, et al.         Expires February 24, 2020               [Page 2]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
+   application in the accompanying request parameters, e.g., the
    resource URI and any further options (header fields), but three usage
    scenarios are envisioned:
 
-   The individual representations in an application/multipart-core body
-   occur in a sequence, which may be employed by an application where
-   such a sequence is natural, e.g. for a number of audio snippets in
-   various formats to be played out in that sequence, or search results
-   returned in order of relevance.
+   The individual representations in an application/multipart-core
+   message body occur in a sequence, which may be employed by an
+   application where such a sequence is natural, e.g. for a number of
+   audio snippets in various formats to be played out in that sequence,
+   or search results returned in order of relevance.
 
    In other cases, an application may be more interested in a bag of
    representations, which are distinguished by their Content-Format
@@ -148,10 +149,10 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
    for other multipart media types with specific semantics not covered
    by the present specification, such as multipart/alternative
    (Section 5.1.4 of [RFC2046]), where several alternative
-   representations are provided in the message, but only one of those is
-   to be selected by the recipient for its use (this is less likely to
-   be useful in a constrained environment that has facilities for pre-
-   flight discovery).
+   representations are provided in the message body, but only one of
+   those is to be selected by the recipient for its use (this is less
+   likely to be useful in a constrained environment that has facilities
+   for pre-flight discovery).
 
 1.1.  Requirements Language
 
@@ -164,8 +165,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-
-Fossati, et al.         Expires February 23, 2020               [Page 3]
+Fossati, et al.         Expires February 24, 2020               [Page 3]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -221,7 +221,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 4]
+Fossati, et al.         Expires February 24, 2020               [Page 4]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -277,7 +277,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 5]
+Fossati, et al.         Expires February 24, 2020               [Page 5]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -333,7 +333,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 6]
+Fossati, et al.         Expires February 24, 2020               [Page 6]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -389,7 +389,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 7]
+Fossati, et al.         Expires February 24, 2020               [Page 7]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -445,7 +445,7 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 8]
+Fossati, et al.         Expires February 24, 2020               [Page 8]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -501,7 +501,7 @@ Authors' Addresses
 
 
 
-Fossati, et al.         Expires February 23, 2020               [Page 9]
+Fossati, et al.         Expires February 24, 2020               [Page 9]
 
 Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
@@ -557,4 +557,4 @@ Internet-Draft      Multipart Content-Format for CoAP        August 2019
 
 
 
-Fossati, et al.         Expires February 23, 2020              [Page 10]
+Fossati, et al.         Expires February 24, 2020              [Page 10]
