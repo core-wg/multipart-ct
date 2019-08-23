@@ -57,7 +57,7 @@ informative:
 This memo defines application/multipart-core, an
 application-independent media type that can be used
 to combine representations of zero or more different media types into a single
-message, such as a CoAP request or response body, with minimal framing overhead, each along with a CoAP
+message body, carried e.g., as a CoAP request or response payload, with minimal framing overhead, each along with a CoAP
 Content-Format identifier.
 
 --- middle
@@ -68,11 +68,11 @@ This memo defines application/multipart-core, an application-independent
 media type that can be used to combine representations of zero or more
 different media types, each along with a CoAP Content-Format
 identifier, into a single representation, with minimal framing overhead.
-This combined representation may then be carried in a single message,
-such as a CoAP {{-coap}} request or response body.
+This combined representation may then be carried in a single message body,
+such as a CoAP {{-coap}} request or response payload.
 
 This simple and efficient binary framing mechanism can be employed to
-create application specific request and response bodies which build on
+create application specific message bodies which build on
 multiple already existing media types.
 
 As the name of the media type suggests, it is inspired by the
@@ -91,7 +91,7 @@ established by the application in the accompanying request parameters,
 e.g., the resource URI and any further options (header fields), but
 three usage scenarios are envisioned:
 
-The individual representations in an application/multipart-core body
+The individual representations in an application/multipart-core message body
 occur in a sequence, which may be employed by an application where
 such a sequence is natural, e.g. for a number of audio snippets in
 various formats to be played out in that sequence, or search results
@@ -122,7 +122,7 @@ Also, future specifications might want to define rough equivalents for
 other multipart media types with specific semantics not covered by the
 present specification, such as multipart/alternative (Section 5.1.4 of
 {{-mime-types}}), where several alternative representations are
-provided in the message, but only one of those is to be selected by
+provided in the message body, but only one of those is to be selected by
 the recipient for its use (this is less likely to be useful in a
 constrained environment that has facilities for pre-flight discovery).
 
